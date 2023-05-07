@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Servicios.h" />
 		<Unit filename="include/TiposUsuario.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
