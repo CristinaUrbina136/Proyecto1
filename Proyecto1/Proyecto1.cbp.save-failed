@@ -35,15 +35,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Areas.h" />
-		<Unit filename="include/DLinkedList.h" />
-		<Unit filename="include/DNode.h" />
-		<Unit filename="include/HeapPriorityQueue.h" />
-		<Unit filename="include/KVPair.h" />
-		<Unit filename="include/MinHeap.h" />
-		<Unit filename="include/PriorityQueue.h" />
 		<Unit filename="include/Servicios.h" />
 		<Unit filename="include/TiposUsuario.h" />
-		<Unit filename="include/Ventanillas.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
