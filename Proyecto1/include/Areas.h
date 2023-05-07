@@ -9,6 +9,7 @@
 
 using namespace std;
 
+//Esta clase representa al objeto Area
 class Areas
 {
 private:

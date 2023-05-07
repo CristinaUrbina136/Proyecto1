@@ -43,6 +43,7 @@
 		<Unit filename="include/PriorityQueue.h" />
 		<Unit filename="include/Servicios.h" />
 		<Unit filename="include/TiposUsuario.h" />
+		<Unit filename="include/Tiquetes.h" />
 		<Unit filename="include/Ventanillas.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
