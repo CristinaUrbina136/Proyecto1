@@ -17,7 +17,7 @@ private:
     string descipcion;
     string codigo;
     int cantVentanillas;
-    DLinkedList listaVentanillas;
+    DLinkedList<Ventanillas> listaVentanillas;
     HeapPriorityQueue tiquetes;
 
 public:
@@ -40,6 +40,11 @@ public:
     }
     string getCodigo(){
         return codigo;
+    }
+    void crearVentanillas(int cantVentanillas){
+        for(i = 0; i < cantVentanillas; i++){
+
+        }
     }
 
 
