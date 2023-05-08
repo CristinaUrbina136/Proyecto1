@@ -6,6 +6,7 @@
 #include<string>
 #include "HeapPriorityQueue.h"
 #include "DLinkedList.h"
+#include "Ventanillas.h"
 
 using namespace std;
 
@@ -15,41 +16,35 @@ class Areas
 private:
     //pensandolo
     //Principales propiedades
-    string descipcion;
+    string descripcion;
     string codigo;
     //Para manejar las ventanillas
     int cantVentanillas;
-    DLinkedList<Ventanillas> listaVentanillas;
+    //DLinkedList<Ventanillas> listaVentanillas;
     //Cola de prioridad de tiquetes
-    HeapPriorityQueue tiquetes;
+    //HeapPriorityQueue<Tiquetes> tiquetes;
 
 public:
     //Se agregaran las restricciones despues
     //Crea un Area (es el constructor)
-    void Area(string descipcion, string codigo, int ventanillas){
-        this->descipcion = descripcion;
+    void Area(string descripcion, string codigo, int cantVentanillas){
+        this->descripcion = descripcion;
         this->codigo = codigo;
-        this->ventanillas = ventanillas;
+        this->cantVentanillas = cantVentanillas;
     }
     //Elimina un area, para hacerlo previamente en el sistema se pedira el codigo para
     //identificar el objeto, esta funcion solo elimina la ventanilla (es el destructor)
-    ~Area(){
-        //pensandolo
-    }
+
     //Modifica la cantidad de ventanillas de un area, para hacerlo previamente en el sistema se pedira el codigo para
     //identificar el objeto, esta funcion solo modifica la cantidad de ventanillas
     void setCantVentanillas(int ventanillas){
-        this->ventanillas = ventanillas;
+        this->cantVentanillas = cantVentanillas;
     }
     //Llena la lista de ventanillas con la cantidad de ventanillas solicitada
     void setListaVentanillas(int cantVentanillas){
-        numVentanilla = 1;
-        codVentanilla = getCodigo();
-        Ventanilla tVentanilla;
-        for(i = 0; i < cantVentanillas; i++){
+        int numVentanilla = 1;
+        string codVentanilla = getCodigo();
 
-            listaVentanillas.append();
-        }
     }
     string getCodigo(){
         return codigo;

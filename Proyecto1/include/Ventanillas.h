@@ -15,8 +15,20 @@ class Ventanillas
 private:
     string nombre;
     Tiquetes tiqueteActual;
-public:
 
+public:
+    void setNombre(string nombre){
+        this->nombre = nombre;
+    }
+    void setTiqueteActual(Tiquetes tiqueteActual){
+        this->tiqueteActual = tiqueteActual;
+    }
+    string getNombre(){
+        return nombre;
+    }
+    Tiquetes getTiqueteActual(){
+        return tiqueteActual;
+    }
 };
 
 #endif // VENTANILLAS_H
