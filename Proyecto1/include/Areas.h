@@ -14,10 +14,13 @@ class Areas
 {
 private:
     //pensandolo
+    //Principales propiedades
     string descipcion;
     string codigo;
+    //Para manejar las ventanillas
     int cantVentanillas;
     DLinkedList<Ventanillas> listaVentanillas;
+    //Cola de prioridad de tiquetes
     HeapPriorityQueue tiquetes;
 
 public:
@@ -35,17 +38,23 @@ public:
     }
     //Modifica la cantidad de ventanillas de un area, para hacerlo previamente en el sistema se pedira el codigo para
     //identificar el objeto, esta funcion solo modifica la cantidad de ventanillas
-    void setVentanillas(int ventanillas){
+    void setCantVentanillas(int ventanillas){
         this->ventanillas = ventanillas;
+    }
+    //Llena la lista de ventanillas con la cantidad de ventanillas solicitada
+    void setListaVentanillas(int cantVentanillas){
+        numVentanilla = 1;
+        codVentanilla = getCodigo();
+        Ventanilla tVentanilla;
+        for(i = 0; i < cantVentanillas; i++){
+
+            listaVentanillas.append();
+        }
     }
     string getCodigo(){
         return codigo;
     }
-    void crearVentanillas(int cantVentanillas){
-        for(i = 0; i < cantVentanillas; i++){
 
-        }
-    }
 
 
 
