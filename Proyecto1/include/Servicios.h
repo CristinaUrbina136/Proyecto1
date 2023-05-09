@@ -8,6 +8,7 @@ private:
     string nombre;
     string codigoArea;
     string descripcion;
+    int tiquetes;
 public:
     Servicios(string nombre, string codigoArea, string descripcion) {
         this->nombre = nombre;
@@ -40,6 +41,12 @@ public:
 
     string getDescripcion(){
         return descripcion;
+    }
+    void tiqueteAgregado() {
+        tiquetes += 1;
+    }
+    int getTiquetes() {
+        return tiquetes;
     }
 };
 

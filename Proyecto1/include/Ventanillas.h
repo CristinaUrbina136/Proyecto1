@@ -10,13 +10,44 @@
 using namespace std;
 
 //Esta clase representa al objeto Ventanilla
-class Ventanillas
-{
+class Ventanillas {
 private:
-    string nombre;
-    Tiquetes tiqueteActual;
-public:
+    int atendidos = 0;
+    string codigoVentana;
+    string codigoArea;
+    tiquete *ultimoTiquete;
 
+public:
+    Ventanillas(string codigoVentana, string codigoArea, tiquete *ultimoTiquete = nullptr) {
+        this->codigoVentanilla = codigoVentanilla;
+        this->codigoArea = codigoArea;
+        this->ultimoTiquete = ultimoTiquete;
+    }
+    ~Ventanillas(){
+        delete [] ultimoTiquete;
+    }
+    void setCodigoVentanilla(string codigoVentanilla){
+        this->codigoVentanilla = codigoVentanilla;
+    }
+    string getCodigoVentanilla() {
+        return codigoVentanilla;
+    }
+    void setCodigoArea(string codigoArea){
+        this->codigoArea = codigoArea;
+    }
+    string getCodigoArea() {
+        return codigoArea;
+    }
+    int getAtendidos() {
+        return atendidos;
+    }
+    void setUltimoTiquete(tiquete *ultimoTiquete){
+        atendidos++;
+        this->ultimoTiquete = ultimoTiquete;
+    }
+    tiquete* getUltimoTiquete() {
+        return ultimoTiquete;
+    }
 };
 
-#endif // VENTANILLAS_H
+#endif // VENTANILLA_H
