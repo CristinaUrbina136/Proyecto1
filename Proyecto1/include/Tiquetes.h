@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include <ctime>
+#include "Areas.h"
 
 using namespace std;
 
@@ -15,6 +16,8 @@ private:
     string codigo;
     char *fechaSolicitados;
     int prioridadFinal;
+
+
 };
 
 #endif // TIQUETES_H

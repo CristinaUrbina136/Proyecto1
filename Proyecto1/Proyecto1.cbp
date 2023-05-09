@@ -39,6 +39,7 @@
 		<Unit filename="include/DNode.h" />
 		<Unit filename="include/HeapPriorityQueue.h" />
 		<Unit filename="include/KVPair.h" />
+		<Unit filename="include/List.h" />
 		<Unit filename="include/MinHeap.h" />
 		<Unit filename="include/PriorityQueue.h" />
 		<Unit filename="include/Servicios.h" />

@@ -6,6 +6,7 @@
 #include<string>
 #include "HeapPriorityQueue.h"
 #include "DLinkedList.h"
+#include "Ventanillas.h"
 
 using namespace std;
 
@@ -14,38 +15,41 @@ class Areas
 {
 private:
     //pensandolo
-    string descipcion;
+    //Principales propiedades
+    string descripcion;
     string codigo;
+    //Para manejar las ventanillas
     int cantVentanillas;
-    DLinkedList<Ventanillas> listaVentanillas;
-    HeapPriorityQueue tiquetes;
+    //DLinkedList<Ventanillas> listaVentanillas;
+    //Cola de prioridad de tiquetes
+    //HeapPriorityQueue<Tiquetes> tiquetes;
 
 public:
     //Se agregaran las restricciones despues
     //Crea un Area (es el constructor)
-    void Area(string descipcion, string codigo, int ventanillas){
-        this->descipcion = descripcion;
+    void Area(string descripcion, string codigo, int cantVentanillas){
+        this->descripcion = descripcion;
         this->codigo = codigo;
-        this->ventanillas = ventanillas;
+        this->cantVentanillas = cantVentanillas;
     }
     //Elimina un area, para hacerlo previamente en el sistema se pedira el codigo para
     //identificar el objeto, esta funcion solo elimina la ventanilla (es el destructor)
-    ~Area(){
-        //pensandolo
-    }
+
     //Modifica la cantidad de ventanillas de un area, para hacerlo previamente en el sistema se pedira el codigo para
     //identificar el objeto, esta funcion solo modifica la cantidad de ventanillas
-    void setVentanillas(int ventanillas){
-        this->ventanillas = ventanillas;
+    void setCantVentanillas(int ventanillas){
+        this->cantVentanillas = cantVentanillas;
+    }
+    //Llena la lista de ventanillas con la cantidad de ventanillas solicitada
+    void setListaVentanillas(int cantVentanillas){
+        int numVentanilla = 1;
+        string codVentanilla = getCodigo();
+
     }
     string getCodigo(){
         return codigo;
     }
-    void crearVentanillas(int cantVentanillas){
-        for(i = 0; i < cantVentanillas; i++){
 
-        }
-    }
 
 
 
