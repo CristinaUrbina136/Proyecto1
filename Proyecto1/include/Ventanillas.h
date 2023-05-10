@@ -11,11 +11,10 @@ using namespace std;
 
 //Esta clase representa al objeto Ventanilla
 class Ventanillas {
-private:
+public:
     string nombre;
     Tiquetes tiqueteActual;
 
-public:
     void setNombre(string nombre){
         this->nombre = nombre;
     }
@@ -28,6 +27,12 @@ public:
     Tiquetes getTiqueteActual(){
         return tiqueteActual;
     }
+
 };
+
+ostream& operator <<(ostream &os, const Ventanillas &v) {
+    os << "Ventanilla (" << v.nombre << ", " << v.tiqueteActual << ")";
+    return os;
+}
 
 #endif // VENTANILLA_H

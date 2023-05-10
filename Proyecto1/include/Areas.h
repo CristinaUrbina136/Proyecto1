@@ -20,9 +20,9 @@ private:
     string codigo;
     //Para manejar las ventanillas
     int cantVentanillas;
-    //DLinkedList<Ventanillas> listaVentanillas;
+    DLinkedList<Ventanillas> listaVentanillas;
     //Cola de prioridad de tiquetes
-    //HeapPriorityQueue<Tiquetes> tiquetes;
+    HeapPriorityQueue<Tiquetes> tiquetes;
 
 public:
     //Se agregaran las restricciones despues
