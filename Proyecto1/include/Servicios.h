@@ -19,6 +19,13 @@ public:
 
     ~Servicios() {}
 
+    void operator =(const Servicios &s) {
+        this->nombre = s.nombre;
+        this->codigoArea = s.codigoArea;
+        this->descripcion = s.descripcion;
+        this->tiquetes = s.tiquetes;
+    }
+
     void setNombre(string nombre){
         this->nombre = nombre;
     }
