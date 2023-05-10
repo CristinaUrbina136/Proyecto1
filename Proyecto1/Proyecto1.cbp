@@ -35,6 +35,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Areas.h" />
+		<Unit filename="include/Controlador.h" />
 		<Unit filename="include/DLinkedList.h" />
 		<Unit filename="include/DNode.h" />
 		<Unit filename="include/HeapPriorityQueue.h" />

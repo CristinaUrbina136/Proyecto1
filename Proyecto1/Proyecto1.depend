@@ -107,3 +107,57 @@
 	<ctime>
 	"Areas.h"
 
+1683614593 source:c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\main.cpp
+	<iostream>
+	<stdexcept>
+	<iostream>
+	"Areas.h"
+
+1683688681 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\areas.h
+	<stdexcept>
+	<iostream>
+	<string>
+	"HeapPriorityQueue.h"
+	"DLinkedList.h"
+	"Ventanillas.h"
+
+1683503396 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\heappriorityqueue.h
+	<stdexcept>
+	<iostream>
+	"MinHeap.h"
+	"KVPair.h"
+	"PriorityQueue.h"
+
+1683503396 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\minheap.h
+	<stdexcept>
+	<iostream>
+
+1683503396 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\kvpair.h
+	<iostream>
+
+1683503396 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\priorityqueue.h
+
+1683503396 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\dlinkedlist.h
+	<stdexcept>
+	<iostream>
+	"List.h"
+	"DNode.h"
+
+1683614592 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\list.h
+
+1683503396 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\dnode.h
+
+1683688681 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\ventanillas.h
+	<stdexcept>
+	<iostream>
+	<string>
+	"DNode.h"
+	"Tiquetes.h"
+
+1683688681 c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\include\tiquetes.h
+	<stdexcept>
+	<iostream>
+	<string>
+	<ctime>
+	"Areas.h"
+
