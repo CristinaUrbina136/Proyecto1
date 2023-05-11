@@ -11,27 +11,47 @@ using namespace std;
 
 //Esta clase representa al objeto Ventanilla
 class Ventanillas {
+private:
+    int atendidos = 0;
+    string codigoVentanilla;
+    string codigoArea;
+    tiquete *ultimoTiquete;
+
 public:
-    string nombre;
-    Tiquetes tiqueteActual;
-
-    void setNombre(string nombre){
-        this->nombre = nombre;
+    Ventanillas(string codigoVentanilla, string codigoArea, tiquete *ultimoTiquete = nullptr) {
+        this->codigoVentanilla = codigoVentanilla;
+        this->codigoArea = codigoArea;
+        this->ultimoTiquete = ultimoTiquete;
     }
-    void setTiqueteActual(Tiquetes tiqueteActual){
-        this->tiqueteActual = tiqueteActual;
+    ~Ventanillas(){
+        delete [] ultimoTiquete;
     }
-    string getNombre(){
-        return nombre;
+    void setCodigoVentanilla(string codigoVentanilla){
+        this->codigoVentanilla = codigoVentanilla;
     }
-    Tiquetes getTiqueteActual(){
-        return tiqueteActual;
+    string getCodigoVentanilla() {
+        return codigoVentanilla;
     }
-
+    void setCodigoArea(string codigoArea){
+        this->codigoArea = codigoArea;
+    }
+    string getCodigoArea() {
+        return codigoArea;
+    }
+    int getAtendidos() {
+        return atendidos;
+    }
+    void setUltimoTiquete(tiquete *ultimoTiquete){
+        atendidos++;
+        this->ultimoTiquete = ultimoTiquete;
+    }
+    tiquete* getUltimoTiquete() {
+        return ultimoTiquete;
+    }
 };
 
 ostream& operator <<(ostream &os, const Ventanillas &v) {
-    os << "Ventanilla (" << v.nombre << ", " << v.tiqueteActual << ")";
+    os << "Ventanilla (" << v.codigoVentanilla << ", " << v.codigoArea << ", " << v.ultimoTiquete << ")";
     return os;
 }
 
