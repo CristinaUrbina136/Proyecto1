@@ -7,6 +7,8 @@ using namespace std;
 
 int main()
 {
+    //Es un boceto del programa, se haran correciones menores y detalles cuando este terminado
+
     //Para probar
 
     Sistema sistema;
@@ -24,7 +26,6 @@ int main()
     sistema.appendListaAreas("Area de informacion", "I", 5);
     sistema.printAreas();
 
-    //ESTO SE TIENE QUE ARREGLAR el codigo de area debe ser tipo area
     cout << "\nSERVICIOS" << endl;
     sistema.appendListaServicios("Comprar boleto", 0, "C");
     sistema.appendListaServicios("Cambiar boleto", 1, "I");
@@ -147,7 +148,7 @@ int main()
                     cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
                     getline(cin, cantidad);
                     cin.clear();
-                    sistema.modVentanillasTiposUsuario(codigo, stoi(cantidad));
+                    sistema.modVentanillasArea(codigo, stoi(cantidad));
                 }
 
                 if (subSubOpcion == "3"){
@@ -156,7 +157,6 @@ int main()
                     cin.clear();
                     sistema.removeListaAreas(codigo);
                 }
-                sistema.printAreas();
             }
 
             while(subOpcion == "3" && subSubOpcion != "4"){
@@ -168,6 +168,32 @@ int main()
                 cout << "Opcion seleccionada: ";
                 getline(cin, subSubOpcion);
                 cin.clear();
+
+                if (subSubOpcion == "1"){
+                    //se tiene que trabajar pensando en que no se puede asignar un area que no existe a un servicio
+                    cout << "\nIngrese la descripcion del servicio a agregar: ";
+                    getline(cin, descripcion);
+                    cin.clear();
+                    cout << "\nIngrese la prioridad del servicio a agregar: ";
+                    getline(cin, prioridad);
+                    cin.clear();
+                    cout << "\nIngrese el codigo del area del servicio a agregar: ";
+                    getline(cin, codigo);
+                    cin.clear();
+                    sistema.appendListaServicios(descripcion, stoi(prioridad), codigo);
+                }
+
+                if (subSubOpcion == "2"){
+                    //se tiene que trabajar pensando en que no se puede asignar un area que no existe a un servicio
+                    cout << "\nIngrese la descripcion del servicio a eliminar: ";
+                    getline(cin, descripcion);
+                    cin.clear();
+                    sistema.removeListaServicios(descripcion);
+                }
+
+
+                sistema.printServicios();
+
             }
 
             if(subOpcion == "4"){

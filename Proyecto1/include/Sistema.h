@@ -46,7 +46,7 @@ public:
 
     //Eliminar un tipo de usuario de la lista de tipos de usuario
     void removeListaTiposUsuario(string descripcion){
-        listaTiposUsuario.atStart();
+        listaTiposUsuario.goToStart();
         while (!listaTiposUsuario.atEnd()){
             TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
             if(tempUsuario->descripcion == descripcion){
@@ -58,7 +58,7 @@ public:
 
     //Eliminar un area de la lista de areas
     void removeListaAreas(string codigo){
-        listaAreas.atStart();
+        listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();
             if(tempArea->codigo == codigo){
@@ -68,8 +68,20 @@ public:
         }
     }
 
+    //Eliminar un servicio de la lista de servicios
+    void removeListaServicios(string descripcion){
+        listaServicios.goToStart();
+        while (!listaServicios.atEnd()){
+            Servicios *tempServicio = listaServicios.getElement();
+            if(tempServicio->descripcion == descripcion){
+                listaServicios.remove();
+            }
+            listaServicios.next();
+        }
+    }
 
-    void modVentanillasTiposUsuario(string codigo, int cantVentanillas){
+    //Modifica la cantidad de ventanillas de un area
+    void modVentanillasArea(string codigo, int cantVentanillas){
         listaAreas.atStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();

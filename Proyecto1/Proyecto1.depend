@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683986689 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
+1683987462 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
@@ -164,7 +164,7 @@
 	<ctime>
 	"Areas.h"
 
-1683986689 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
+1683987576 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
 	<stdexcept>
 	<iostream>
 	<string>
