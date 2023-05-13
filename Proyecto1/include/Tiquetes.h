@@ -14,16 +14,18 @@ using namespace std;
 class Tiquetes
 {
 public:
-    string codigoArea;
     string codigoTiquete;
     char *fechaSolicitados;
-    int prioridadUsuario;
-    int prioridadServicio;
     int prioridadFinal;
 
-    void setPrioridadFinal(){
-        this->prioridadFinal = this->prioridadUsuario * 10 + this->prioridadServicio;
+    void setCodigoTiquete(string codigoArea, int tiquetesGlobal) {
+        this->codigoTiquete = codigoArea + to_string(tiquetesGlobal);
     }
+
+    void setPrioridadFinal(int prioridadUsuario, int prioridadServicio){
+        this->prioridadFinal = prioridadUsuario * 10 + prioridadServicio;
+    }
+
 
 
 

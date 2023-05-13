@@ -36,6 +36,8 @@ int main()
 
     //MENUS TEMPORALES
 
+    int tiquetesGlobal = 100;
+
     string opcion;
     string subOpcion;
     string subSubOpcion;
@@ -69,6 +71,7 @@ int main()
         }
 
         //SUBMENU TIQUETES
+        //Trabajandolo
         while (opcion == "2" && subOpcion != "2"){
             cout << "\nSUBMENU TIQUETES" << endl;
             cout << "1. Seleccionar tipo de tiquete y servicio" << endl;
@@ -76,6 +79,19 @@ int main()
             cout << "Opcion seleccionada: ";
             getline(cin, subOpcion);
             cin.clear();
+
+            if (subOpcion == "1"){
+                //Funciona con las posiciones de las respectivas listas, despues se acomodara para que quede bonito
+                cout << "\nIngrese su tipo de usuario: ";
+                getline(cin, temp1);
+                cin.clear();
+                cout << "\nIngrese el servicio: ";
+                getline(cin, temp2);
+                cin.clear();
+
+            }
+
+
         }
 
         //SUBMENU ADMINISTRACION
