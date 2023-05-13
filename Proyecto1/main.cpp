@@ -7,7 +7,14 @@ using namespace std;
 
 int main()
 {
+    //Para probar
     Sistema sistema;
+
+    sistema.appendListaTiposUsuario("adulto mayor", 1);
+    sistema.appendListaTiposUsuario("discapacitado", 0);
+    sistema.appendListaTiposUsuario("usuario regular", 3);
+    sistema.appendListaTiposUsuario("representante organizacional", 2);
+    sistema.printTiposUsuario();
 
     //MENU TEMPORAL
 

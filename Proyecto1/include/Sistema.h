@@ -24,7 +24,6 @@ public:
         tempUsuario->setDescripcion(descripcion);
         tempUsuario->setPrioridad(prioridad);
         listaTiposUsuario.append(tempUsuario);
-        listaTiposUsuario.printP();
     }
 
     //Agregar un tipo de usuario a la lista de tipos de servicios
@@ -34,7 +33,6 @@ public:
         tempServicio->setPrioridad(prioridad);
         tempServicio->setCodigoArea(codigoArea);
         listaServicios.append(tempServicio);
-        listaServicios.printP();
     }
 
     //Agregar un tipo de usuario a la lista de areas
@@ -44,7 +42,10 @@ public:
         tempArea->setCodigo(codigo);
         tempArea->setListaVentanillas(cantVentanillas);
         listaAreas.append(tempArea);
-        listaAreas.printP();
+    }
+
+    void printTiposUsuario(){
+        listaTiposUsuario.printP();
     }
 
 };
