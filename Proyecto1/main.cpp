@@ -9,7 +9,8 @@ int main()
 {
 
     Areas area1;
-    area1.setCantVentanillas(2);
+    area1.setCodigo("C");
+    area1.setListaVentanillas(3);
 
     return 0;
 }

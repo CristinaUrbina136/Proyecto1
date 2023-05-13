@@ -18,11 +18,7 @@ public:
     string codigoArea;
     Tiquetes *ultimoTiquete;
 
-    Ventanillas(string codigoVentanilla, string codigoArea, Tiquetes *ultimoTiquete = nullptr) {
-        this->codigoVentanilla = codigoVentanilla;
-        this->codigoArea = codigoArea;
-        this->ultimoTiquete = ultimoTiquete;
-    }
+
     ~Ventanillas(){
         delete [] ultimoTiquete;
     }
