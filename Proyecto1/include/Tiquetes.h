@@ -23,7 +23,7 @@ public:
     }
 
     void setPrioridadFinal(int prioridadUsuario, int prioridadServicio){
-        this->prioridadFinal = prioridadUsuario * 10 + prioridadServicio;
+        this->prioridadFinal = (prioridadUsuario * 10) + prioridadServicio;
     }
 
     //Pone la fecha en tiempo local

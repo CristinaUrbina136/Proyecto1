@@ -103,19 +103,19 @@ public:
     int getPrioridadServicio(int pos){
         listaServicios.goToPos(pos);
         Servicios *tempServicio = listaServicios.getElement();
-        return tempServicio->getPrioridad();
+        return tempServicio->prioridad;
     }
 
     int getPrioridadUsuario(int pos){
         listaTiposUsuario.goToPos(pos);
         TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
-        return tempUsuario->getPrioridad();
+        return tempUsuario->prioridad;
     }
 
     string getCodAreaServicio(int pos){
         listaServicios.goToPos(pos);
         Servicios *tempServicio = listaServicios.getElement();
-        return tempServicio->getCodigoArea();
+        return tempServicio->codigoArea;
     }
 
     void printTiposUsuario(){

@@ -44,13 +44,12 @@ int main()
 
     string descripcion;
     string prioridad;
+    int prioridadU;
+    int prioridadS;
     string codigo;
     string cantidad;
     string temp1;
     string temp2;
-    string temp3;
-    string temp4;
-    string temp5;
 
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
@@ -89,16 +88,16 @@ int main()
                 cout << "\nIngrese su tipo de usuario: ";
                 getline(cin, temp1);
                 cin.clear();
-                temp3 = sistema.getPrioridadUsuario(stoi(temp1));
+                prioridadU = sistema.getPrioridadUsuario(stoi(temp1));
                 sistema.printServicios();
                 cout << "\nIngrese el servicio al que desea acceder: ";
                 getline(cin, temp2);
                 cin.clear();
-                temp4 = sistema.getPrioridadServicio(stoi(temp2));
-                temp5 = sistema.getCodAreaServicio(stoi(temp2));
+                codigo = sistema.getCodAreaServicio(stoi(temp2));
+                prioridadS = sistema.getPrioridadServicio(stoi(temp2));
                 Tiquetes tempTiquete;
-                tempTiquete.setCodigoTiquete(temp5, tiquetesGlobal);
-                tempTiquete.setPrioridadFinal(stoi(temp3), stoi(temp4));
+                tempTiquete.setCodigoTiquete(codigo, tiquetesGlobal);
+                tempTiquete.setPrioridadFinal(prioridadU, prioridadS);
                 tempTiquete.setFechaSolicitado();
                 tempTiquete.verTiquete();
                 tiquetesGlobal++;
