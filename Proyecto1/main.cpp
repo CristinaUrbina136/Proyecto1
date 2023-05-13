@@ -32,29 +32,48 @@ int main()
     sistema.printServicios();
 
 
-    //MENUS TEMPORALES
+    //MENUS TEMPORALES ocupan muchas correciones
 
     string opcion;
-    cout << "\nMENU PRINCIPAL" << endl;
-    cout << "1. Estado de las colas" << endl;
-    cout << "2. Tiquetes" << endl;
-    cout << "3. Atender" << endl;
-    cout << "4. Administracion" << endl;
-    cout << "5. Estadisticas del sistema" << endl;
-    cout << "6. Salir" << endl;
+    string subOpcion;
+    while (opcion != "6"){
+        cout << "\nMENU PRINCIPAL" << endl;
+        cout << "1. Estado de las colas" << endl;
+        cout << "2. Tiquetes" << endl;
+        cout << "3. Atender" << endl;
+        cout << "4. Administracion" << endl;
+        cout << "5. Estadisticas del sistema" << endl;
+        cout << "6. Salir" << endl;
+        cout << "Opcion seleccionada: ";
+        getline(cin, opcion);
+        cin.clear();
 
-    //SUBMENU ADMINISTRACION
-    cout << "\nSUBMENU ADMINISTRACION" << endl;
-    cout << "1. Tipos de usuario" << endl;
-    cout << "2. Areas" << endl;
-    cout << "3. Servicios disponibles" << endl;
-    cout << "4. Limpiar colas y estadisticas" << endl;
+        while (opcion == "2" && subOpcion != "2"){
+             //SUBMENU TIQUETES
+            cout << "\nSUBMENU TIQUETES" << endl;
+            cout << "1. Seleccionar tipo de tiquete y servicio" << endl;
+            cout << "2. Regresar" << endl;
+            cout << "Opcion seleccionada: ";
+            getline(cin, subOpcion);
+            cin.clear();
+        }
+
+        while (opcion == "4" && subOpcion != "5"){
+            //SUBMENU ADMINISTRACION
+            cout << "\nSUBMENU ADMINISTRACION" << endl;
+            cout << "1. Tipos de usuario" << endl;
+            cout << "2. Areas" << endl;
+            cout << "3. Servicios disponibles" << endl;
+            cout << "4. Limpiar colas y estadisticas" << endl;
+            cout << "5. Regresar" << endl;
+            cout << "Opcion seleccionada: ";
+            getline(cin, subOpcion);
+            cin.clear();
+        }
 
 
-    //SUBMENU TIQUETES
-    cout << "\nSUBMENU TIQUETES" << endl;
-    cout << "1. Seleccionar tipo de tiquete y servicio" << endl;
-    cout << "2. Regresar" << endl;
+    }
+
 
     return 0;
 }
