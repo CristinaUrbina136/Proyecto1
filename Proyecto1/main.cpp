@@ -37,6 +37,10 @@ int main()
     string opcion;
     string subOpcion;
     string subSubOpcion;
+
+    string descripcion;
+    string prioridad;
+
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
         cout << "1. Estado de las colas" << endl;
@@ -89,6 +93,17 @@ int main()
                 cout << "Opcion seleccionada: ";
                 getline(cin, subSubOpcion);
                 cin.clear();
+
+                if (subSubOpcion == "1"){
+                    cout << "Ingrese la descripcion del tipo de usuario a agregar: ";
+                    getline(cin, descripcion);
+                    cin.clear();
+                    cout << "Ingrese la prioridad del tipo de usuario a agregar: ";
+                    getline(cin, prioridad);
+                    cin.clear();
+                    sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
+                }
+
             }
 
             while(subOpcion == "2" && subSubOpcion != "4"){
