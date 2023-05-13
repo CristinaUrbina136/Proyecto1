@@ -56,6 +56,19 @@ public:
         }
     }
 
+    //Eliminar un area de la lista de areas
+    void removeListaAreas(string codigo){
+        listaAreas.atStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            if(tempArea->codigo == codigo){
+                listaAreas.remove();
+            }
+            listaAreas.next();
+        }
+    }
+
+
     void modVentanillasTiposUsuario(string codigo, int cantVentanillas){
         listaAreas.atStart();
         while (!listaAreas.atEnd()){
@@ -66,7 +79,6 @@ public:
             listaAreas.next();
         }
     }
-
 
     void printTiposUsuario(){
         listaTiposUsuario.printP();

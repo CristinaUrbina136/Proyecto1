@@ -88,6 +88,7 @@ int main()
             getline(cin, subOpcion);
             cin.clear();
 
+            //TIPOS DE USUARIO
             while(subOpcion == "1" && subSubOpcion != "3"){
                 cout << "\nTIPOS DE USUARIO" << endl;
                 cout << "1. Agregar" << endl;
@@ -115,6 +116,7 @@ int main()
                 }
             }
 
+            //AREAS
             while(subOpcion == "2" && subSubOpcion != "4"){
                 cout << "\nAREAS" << endl;
                 cout << "1. Agregar" << endl;
@@ -146,6 +148,13 @@ int main()
                     getline(cin, cantidad);
                     cin.clear();
                     sistema.modVentanillasTiposUsuario(codigo, stoi(cantidad));
+                }
+
+                if (subSubOpcion == "3"){
+                    cout << "\nIngrese el codigo del area a eliminar: ";
+                    getline(cin, codigo);
+                    cin.clear();
+                    sistema.removeListaAreas(codigo);
                 }
                 sistema.printAreas();
             }
