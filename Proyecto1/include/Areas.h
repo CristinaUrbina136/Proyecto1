@@ -15,22 +15,15 @@ using namespace std;
 class Areas
 {
 public:
-    //pensandolo
-    //Principales propiedades
     string descripcion;
     string codigo;
-    //Para manejar las ventanillas
     int cantVentanillas;
     DLinkedList<Ventanillas*> listaVentanillas;
-    //Cola de prioridad de tiquetes
     HeapPriorityQueue<Tiquetes> *tiquetes;
 
-
-    //Se agregaran las restricciones despues
-    //Crea un Area (es el constructor)
-
-    //Elimina un area, para hacerlo previamente en el sistema se pedira el codigo para
-    //identificar el objeto, esta funcion solo elimina la ventanilla (es el destructor)
+    void setDescripcion(string descripcion){
+        this->descripcion = descripcion;
+    }
 
     void setCodigo(string codigo){
         this->codigo = codigo;
@@ -53,9 +46,17 @@ public:
         listaVentanillas.printP();
 
     }
+    string getDescripcion(){
+        return descripcion;
+    }
     string getCodigo(){
         return codigo;
     }
+    int getCantVentanillas(){
+        return cantVentanillas;
+    }
+
+
 
 
 
