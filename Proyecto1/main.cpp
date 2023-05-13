@@ -85,7 +85,7 @@ int main()
                 cout << "\nIngrese su tipo de usuario: ";
                 getline(cin, temp1);
                 cin.clear();
-                cout << "\nIngrese el servicio: ";
+                cout << "\nIngrese el servicio al que desea acceder: ";
                 getline(cin, temp2);
                 cin.clear();
 
