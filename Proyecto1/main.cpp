@@ -8,6 +8,7 @@ using namespace std;
 int main()
 {
     //Para probar
+
     Sistema sistema;
 
     cout << "\nTIPOS USUARIO" << endl;
@@ -139,6 +140,12 @@ int main()
 
                 if (subSubOpcion == "2"){
                     //pensando
+                    cout << "\nIngrese el codigo del area a eliminar: ";
+                    getline(cin, codigo);
+                    cin.clear();
+                    cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
+                    getline(cin, cantidad);
+                    cin.clear();
                 }
             }
 
