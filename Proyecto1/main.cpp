@@ -110,9 +110,6 @@ int main()
                     cin.clear();
                     sistema.removeListaTiposUsuario(descripcion);
                 }
-
-                sistema.printTiposUsuario();
-
             }
 
             while(subOpcion == "2" && subSubOpcion != "4"){

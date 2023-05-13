@@ -54,8 +54,6 @@ public:
             }
             listaTiposUsuario.next();
         }
-
-
     }
 
     void printTiposUsuario(){
