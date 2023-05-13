@@ -100,6 +100,24 @@ public:
         listaServicios.insert(tempServicio);
     }
 
+    int getPrioridadServicio(int pos){
+        listaServicios.goToPos(pos);
+        Servicios *tempServicio = listaServicios.getElement();
+        return tempServicio->getPrioridad();
+    }
+
+    int getPrioridadUsuario(int pos){
+        listaTiposUsuario.goToPos(pos);
+        TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+        return tempUsuario->getPrioridad();
+    }
+
+    string getCodAreaServicio(int pos){
+        listaServicios.goToPos(pos);
+        Servicios *tempServicio = listaServicios.getElement();
+        return tempServicio->getCodigoArea();
+    }
+
     void printTiposUsuario(){
         listaTiposUsuario.printP();
     }
@@ -111,7 +129,6 @@ public:
     void printAreas(){
         listaAreas.printP();
     }
-
 
 };
 

@@ -28,6 +28,10 @@ public:
         this->prioridad = prioridad;
     }
 
+    int getPrioridad(){
+        return prioridad;
+    }
+
     string getCodigoArea(){
         return codigoArea;
     }

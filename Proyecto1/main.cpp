@@ -48,6 +48,9 @@ int main()
     string cantidad;
     string temp1;
     string temp2;
+    string temp3;
+    string temp4;
+    string temp5;
 
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
@@ -82,13 +85,21 @@ int main()
 
             if (subOpcion == "1"){
                 //Funciona con las posiciones de las respectivas listas, despues se acomodara para que quede bonito
+                sistema.printTiposUsuario();
                 cout << "\nIngrese su tipo de usuario: ";
                 getline(cin, temp1);
                 cin.clear();
+                temp3 = sistema.getPrioridadUsuario(stoi(temp1));
                 cout << "\nIngrese el servicio al que desea acceder: ";
                 getline(cin, temp2);
                 cin.clear();
-
+                temp4 = sistema.getPrioridadServicio(stoi(temp2));
+                temp5 = sistema.getCodAreaServicio(stoi(temp2));
+                Tiquetes tempTiquete;
+                tempTiquete.setCodigoTiquete(temp5, tiquetesGlobal);
+                tempTiquete.setPrioridadFinal(stoi(temp3), stoi(temp4));
+                tempTiquete.setFechaSolicitado();
+                tiquetesGlobal++;
             }
 
 

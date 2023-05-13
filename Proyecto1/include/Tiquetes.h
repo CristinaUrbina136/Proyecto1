@@ -32,7 +32,9 @@ public:
         fechaSolicitado = ctime(&now);
     }
 
-
+    void verTiquete(){
+        cout << "TIQUETE (" << codigoTiquete << "," << fechaSolicitado << ", " << to_string(prioridadFinal) << ")" << endl;
+    }
 
 
 };
