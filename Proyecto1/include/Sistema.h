@@ -46,6 +46,10 @@ public:
 
     //Eliminar un tipo de usuario de la lista de tipos de usuario
     void removeListaTiposUsuario(string descripcion){
+        //1. Se tiene una lista de tipos de usuario
+        //2. Se quiere encontrar el usuario que cumpla la descripcion
+        //      Se recorre la lista buscando si hay un match, se retorna la posisicon
+        //3. Se hace remove de ese elemento utilizando la posicion dada
 
     }
 
