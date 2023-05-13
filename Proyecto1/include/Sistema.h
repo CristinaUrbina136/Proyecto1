@@ -51,6 +51,15 @@ public:
         //2. Se quiere encontrar el usuario que cumpla la descripcion
         //      Se recorre la lista buscando si hay un match, se retorna la posisicon
         //3. Se hace remove de ese elemento utilizando la posicion dada
+        listaTiposUsuario.atStart();
+        while (!listaTiposUsuario.atEnd()){
+            TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+            if(tempUsuario->descripcion == descripcion){
+                listaTiposUsuario.remove();
+            }
+            listaTiposUsuario.next();
+        }
+
 
     }
 
