@@ -32,15 +32,26 @@ int main()
     sistema.printServicios();
 
 
-    //MENU TEMPORAL
+    //MENUS TEMPORALES
 
     string opcion;
     cout << "\nMENU PRINCIPAL" << endl;
     cout << "1. Estado de las colas" << endl;
     cout << "2. Tiquetes" << endl;
+    cout << "3. Atender" << endl;
+    cout << "4. Administracion" << endl;
+    cout << "5. Estadisticas del sistema" << endl;
+    cout << "6. Salir" << endl;
+
+    //SUBMENU ADMINISTRACION
+    cout << "\nSUBMENU ADMINISTRACION" << endl;
+    cout << "1. Tipos de usuario" << endl;
+    cout << "2. Areas" << endl;
+    cout << "3. Servicios disponibles" << endl;
+    cout << "4. Limpiar colas y estadisticas" << endl;
+
 
     //SUBMENU TIQUETES
-
     cout << "\nSUBMENU TIQUETES" << endl;
     cout << "1. Seleccionar tipo de tiquete y servicio" << endl;
     cout << "2. Regresar" << endl;
