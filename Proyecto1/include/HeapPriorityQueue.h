@@ -45,6 +45,9 @@ public:
     void print() {
         heap->print();
     }
+    void printP() {
+        heap->printP();
+    }
 };
 
 #endif // HEAPPRIORITYQUEUE_H

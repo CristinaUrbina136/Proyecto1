@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683993864 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
+1684001771 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
@@ -59,7 +59,7 @@
 	<ctime>
 	"Areas.h"
 
-1683986245 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
+1684001528 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -68,14 +68,14 @@
 	"DLinkedList.h"
 	"Ventanillas.h"
 
-1682027107 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\heappriorityqueue.h
+1684001948 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\heappriorityqueue.h
 	<stdexcept>
 	<iostream>
 	"MinHeap.h"
 	"KVPair.h"
 	"PriorityQueue.h"
 
-1682025376 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\minheap.h
+1684001948 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\minheap.h
 	<stdexcept>
 	<iostream>
 
@@ -164,7 +164,7 @@
 	<ctime>
 	"Areas.h"
 
-1683993944 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
+1684001742 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
 	<stdexcept>
 	<iostream>
 	<string>

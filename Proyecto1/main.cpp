@@ -97,11 +97,13 @@ int main()
                 codigo = sistema.getCodAreaServicio(stoi(temp2));
                 prioridadS = sistema.getPrioridadServicio(stoi(temp2));
 
-                Tiquetes tempTiquete;
-                tempTiquete.setCodigoTiquete(codigo, tiquetesGlobal);
-                tempTiquete.setPrioridadFinal(prioridadU, prioridadS);
-                tempTiquete.setFechaSolicitado();
-                tempTiquete.verTiquete();
+                Tiquetes* tempTiquete;
+                tempTiquete->setCodigoTiquete(codigo, tiquetesGlobal);
+                tempTiquete->setPrioridadFinal(prioridadU, prioridadS);
+                tempTiquete->setFechaSolicitado();
+
+                tempTiquete->verTiquete();
+                sistema.insertarCola(tempTiquete, codigo);
                 tiquetesGlobal++;
             }
 

@@ -18,7 +18,7 @@ public:
     string descripcion;
     string codigo;
     DLinkedList<Ventanillas*> listaVentanillas;
-    HeapPriorityQueue<Tiquetes> *tiquetes;
+    HeapPriorityQueue<Tiquetes*> tiquetes;
 
     void setDescripcion(string descripcion){
         this->descripcion = descripcion;
@@ -53,6 +53,7 @@ public:
 
 ostream& operator <<(ostream &os, const Areas &a) {
     os << "Area (" << a.descripcion << ", " << a.codigo << ")";
+
     return os;
 }
 

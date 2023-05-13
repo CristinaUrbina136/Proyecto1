@@ -102,12 +102,12 @@ public:
     }
 
     //Inserta el tiquete en la cola de su respectiva area
-    void insertarCola(Tiquetes tiquete, string codigo){
+    void insertarCola(Tiquetes* tiquete, string codigo){
         listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();
             if(tempArea->codigo == codigo){
-                tempArea->tiquetes->insert(tiquete,tiquete.prioridadFinal);
+
             }
             listaAreas.next();
         }
