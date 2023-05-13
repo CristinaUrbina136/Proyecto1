@@ -79,7 +79,6 @@ int main()
         }
 
         //SUBMENU ADMINISTRACION
-        //ES EL PRIMERO QUE SE ESTA TRABAJANDO
         while (opcion == "4" && subOpcion != "5"){
             cout << "\nSUBMENU ADMINISTRACION" << endl;
             cout << "1. Tipos de usuario" << endl;
