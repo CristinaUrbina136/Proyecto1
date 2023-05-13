@@ -40,6 +40,8 @@ int main()
 
     string descripcion;
     string prioridad;
+    string codigo;
+    string cantidad;
 
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
@@ -121,6 +123,23 @@ int main()
                 cout << "Opcion seleccionada: ";
                 getline(cin, subSubOpcion);
                 cin.clear();
+
+                if (subSubOpcion == "1"){
+                    cout << "\nIngrese la descripcion del area a agregar: ";
+                    getline(cin, descripcion);
+                    cin.clear();
+                    cout << "\nIngrese el codigo del area a agregar: ";
+                    getline(cin, codigo);
+                    cin.clear();
+                    cout << "\nIngrese la cantidad de ventanillas del area a agregar: ";
+                    getline(cin, cantidad);
+                    cin.clear();
+                    sistema.appendListaAreas(descripcion, codigo, stoi(cantidad));
+                }
+
+                if (subSubOpcion == "2"){
+                    //pensando
+                }
             }
 
             while(subOpcion == "3" && subSubOpcion != "4"){
