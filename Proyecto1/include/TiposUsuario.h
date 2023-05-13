@@ -32,4 +32,9 @@ public:
 
 };
 
+ostream& operator <<(ostream &os, const TiposUsuario &tu) {
+    os << "TiposUsuario (" << tu.descripcion << ", " << tu.prioridad << ")";
+    return os;
+}
+
 #endif // TIPOSUSUARIO_H

@@ -4,46 +4,32 @@
 
 class Servicios
 {
-private:
-    string nombre;
-    string codigoArea;
-    string descripcion;
-    int tiquetes;
 public:
-    Servicios(string nombre, string codigoArea, string descripcion) {
-        this->nombre = nombre;
-        this->codigoArea = codigoArea;
-        this->descripcion = descripcion;
-        tiquetes = 0;
-        }
-
-    ~Servicios() {}
+    string descripcion;
+    string codigoArea;
+    int prioridad;
+    int tiquetes;
 
     void operator =(const Servicios &s) {
-        this->nombre = s.nombre;
         this->codigoArea = s.codigoArea;
         this->descripcion = s.descripcion;
         this->tiquetes = s.tiquetes;
-    }
-
-    void setNombre(string nombre){
-        this->nombre = nombre;
-    }
-
-    string getNombre(){
-        return nombre;
     }
 
     void setCodigoArea(string codigoArea){
         this->codigoArea = codigoArea;
     }
 
-    string getCodigoArea(){
-        return codigoArea;
-    }
-
     void setDescripcion(string descripcion){
         this->descripcion = descripcion;
+    }
+
+    void setPrioridad(int prioridad){
+        this->prioridad = prioridad;
+    }
+
+    string getCodigoArea(){
+        return codigoArea;
     }
 
     string getDescripcion(){
@@ -56,5 +42,10 @@ public:
         return tiquetes;
     }
 };
+
+ostream& operator <<(ostream &os, const Servicios &s) {
+    os << "Servicios (" << s.descripcion << ", " << s.prioridad << s.codigoArea << ")";
+    return os;
+}
 
 #endif // SERVICIOS_H
