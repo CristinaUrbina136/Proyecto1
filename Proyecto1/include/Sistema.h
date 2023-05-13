@@ -102,12 +102,13 @@ public:
     }
 
     //Inserta el tiquete en la cola de su respectiva area
-    void insertarCola(Tiquetes* tiquete, string codigo){
+    void insertarCola(Tiquetes tiquete, string codigo){
         listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();
+            int tempPrioridad = tiquete.prioridadFinal;
             if(tempArea->codigo == codigo){
-
+                tempArea->insertarCola(tiquete, tempPrioridad);
             }
             listaAreas.next();
         }
@@ -153,6 +154,18 @@ public:
             Areas *tempArea = listaAreas.getElement();
             if(tempArea->codigo == codigo){
                 tempArea->verVentanillas();
+            }
+            listaAreas.next();
+        }
+    }
+
+    //Sirve para ver la cola de tiquetes de un area a partir de su codigo
+    void verCola(string codigo){
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            if(tempArea->codigo == codigo){
+                tempArea->verCola();
             }
             listaAreas.next();
         }

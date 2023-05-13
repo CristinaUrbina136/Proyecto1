@@ -18,7 +18,7 @@ public:
     string descripcion;
     string codigo;
     DLinkedList<Ventanillas*> listaVentanillas;
-    HeapPriorityQueue<Tiquetes> tiquetes;
+    HeapPriorityQueue<Tiquetes*> colaTiquetes;
 
     void setDescripcion(string descripcion){
         this->descripcion = descripcion;
@@ -40,6 +40,12 @@ public:
             numVentanilla++;
         }
     }
+
+    void insertarCola(Tiquetes tiquete, int prioridad){
+        Tiquetes *tempTiquete = &tiquete;
+        colaTiquetes.insert(tempTiquete, prioridad);
+    }
+
     string getDescripcion(){
         return descripcion;
     }
@@ -49,7 +55,10 @@ public:
 
     void verVentanillas(){
         listaVentanillas.printP();
+    }
 
+    void verCola(){
+        colaTiquetes.printP();
     }
 
 };
