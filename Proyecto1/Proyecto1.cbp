@@ -44,6 +44,7 @@
 		<Unit filename="include/MinHeap.h" />
 		<Unit filename="include/PriorityQueue.h" />
 		<Unit filename="include/Servicios.h" />
+		<Unit filename="include/Sistema.h" />
 		<Unit filename="include/TiposUsuario.h" />
 		<Unit filename="include/Tiquetes.h" />
 		<Unit filename="include/Ventanillas.h" />

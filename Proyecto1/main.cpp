@@ -32,7 +32,7 @@ int main()
     sistema.printServicios();
 
 
-    //MENUS TEMPORALES ocupan muchas correciones
+    //MENUS TEMPORALES
 
     string opcion;
     string subOpcion;
