@@ -26,7 +26,7 @@ public:
         listaTiposUsuario.append(tempUsuario);
     }
 
-    //Agregar un tipo de usuario a la lista de tipos de servicios
+    //Agregar un servicio a la lista de tipos de servicios
     void appendListaServicios(string descripcion, int prioridad, string codigoArea){
         Servicios *tempServicio = new Servicios();
         tempServicio->setDescripcion(descripcion);
@@ -35,7 +35,7 @@ public:
         listaServicios.append(tempServicio);
     }
 
-    //Agregar un tipo de usuario a la lista de areas
+    //Agregar un area a la lista de areas
     void appendListaAreas(string descripcion, string codigo, int cantVentanillas){
         Areas *tempArea = new Areas();
         tempArea->setDescripcion(descripcion);
@@ -44,6 +44,7 @@ public:
         listaAreas.append(tempArea);
     }
 
+    //Eliminar un tipo de usuario de la lista de tipos de usuario
     void removeListaTiposUsuario(string descripcion){
 
     }
