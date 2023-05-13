@@ -23,7 +23,7 @@ int main()
     sistema.appendListaAreas("Area de informacion", "I", 5);
     sistema.printAreas();
 
-    //ESTO SE TIENE QUE ARREGLAR
+    //ESTO SE TIENE QUE ARREGLAR el codigo de area debe ser tipo area
     cout << "\nSERVICIOS" << endl;
     sistema.appendListaServicios("Comprar boleto", 0, "C");
     sistema.appendListaServicios("Cambiar boleto", 1, "I");
