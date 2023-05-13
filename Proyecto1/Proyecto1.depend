@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1683978048 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
+1683978460 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
-	"Areas.h"
+	"Sistema.h"
 
 1683586302 source:c:\users\usuario\desktop\proyecto0git\proyecto1\proyecto1\main.cpp
 	<iostream>
@@ -59,7 +59,7 @@
 	<ctime>
 	"Areas.h"
 
-1683977467 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
+1683978856 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -163,4 +163,21 @@
 	<string>
 	<ctime>
 	"Areas.h"
+
+1683978868 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
+	<stdexcept>
+	<iostream>
+	<string>
+	<ostream>
+	"TiposUsuario.h"
+	"Servicios.h"
+	"Areas.h"
+
+1683978856 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiposusuario.h
+	<stdexcept>
+	<iostream>
+	<string>
+	<ostream>
+
+1683677357 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\servicios.h
 

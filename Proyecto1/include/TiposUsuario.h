@@ -11,17 +11,8 @@ using namespace std;
 class TiposUsuario
 {
 public:
-    string tipo;
     string descripcion;
     int prioridad;
-
-    void setTipo(string tipo){
-        this->tipo = tipo;
-    }
-
-    string getTipo(){
-        return tipo;
-    }
 
     void setDescripcion(string descripcion){
         this->descripcion = descripcion;

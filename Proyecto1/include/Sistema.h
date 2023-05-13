@@ -18,6 +18,10 @@ public:
     DLinkedList<Servicios*> listaServicios;
     DLinkedList<Areas*> listaAreas;
 
+    void appendListaTiposUsuario(){
+
+    }
+
 };
 
 #endif // SISTEMA_H

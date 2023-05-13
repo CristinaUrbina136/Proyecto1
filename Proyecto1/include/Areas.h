@@ -44,7 +44,6 @@ public:
             numVentanilla++;
         }
         listaVentanillas.printP();
-
     }
     string getDescripcion(){
         return descripcion;
