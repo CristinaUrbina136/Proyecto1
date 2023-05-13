@@ -48,8 +48,17 @@ int main()
         getline(cin, opcion);
         cin.clear();
 
+        //SUBMENU ESTADO DE LAS COLAS
+        if (opcion == "1"){
+            cout << "\nINSERTAR ESTADO DE LAS COLAS" << endl;
+        }
+
+        if (opcion == "3"){
+            cout << "\nINSERTAR MECANICA DE ATENDER" << endl;
+        }
+
+        //SUBMENU TIQUETES
         while (opcion == "2" && subOpcion != "2"){
-             //SUBMENU TIQUETES
             cout << "\nSUBMENU TIQUETES" << endl;
             cout << "1. Seleccionar tipo de tiquete y servicio" << endl;
             cout << "2. Regresar" << endl;
@@ -58,8 +67,8 @@ int main()
             cin.clear();
         }
 
+        //SUBMENU ADMINISTRACION
         while (opcion == "4" && subOpcion != "5"){
-            //SUBMENU ADMINISTRACION
             cout << "\nSUBMENU ADMINISTRACION" << endl;
             cout << "1. Tipos de usuario" << endl;
             cout << "2. Areas" << endl;
@@ -69,6 +78,10 @@ int main()
             cout << "Opcion seleccionada: ";
             getline(cin, subOpcion);
             cin.clear();
+        }
+
+        if (opcion == "5"){
+            cout << "\nINSERTAR ESTADISTICAS DEL SISTEMA" << endl;
         }
 
 
