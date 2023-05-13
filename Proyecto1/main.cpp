@@ -200,12 +200,8 @@ int main()
                     cout << "\nIngrese la posicion destino: ";
                     getline(cin, temp2);
                     cin.clear();
-
+                    sistema.reorderServicios(stoi(temp1), stoi(temp2));
                 }
-
-
-                sistema.printServicios();
-
             }
 
             if(subOpcion == "4"){

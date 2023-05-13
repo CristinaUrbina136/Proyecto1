@@ -82,7 +82,7 @@ public:
 
     //Modifica la cantidad de ventanillas de un area
     void modVentanillasArea(string codigo, int cantVentanillas){
-        listaAreas.atStart();
+        listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();
             if(tempArea->codigo == codigo){
@@ -90,6 +90,14 @@ public:
             }
             listaAreas.next();
         }
+    }
+
+    void reorderServicios(int posActual, int posDestino){
+        listaServicios.goToPos(posActual);
+        Servicios *tempServicio = listaServicios.getElement();
+        listaServicios.remove();
+        listaServicios.goToPos(posDestino);
+        listaServicios.insert(tempServicio);
     }
 
     void printTiposUsuario(){
