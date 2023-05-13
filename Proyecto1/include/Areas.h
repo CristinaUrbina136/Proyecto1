@@ -17,7 +17,6 @@ class Areas
 public:
     string descripcion;
     string codigo;
-    int cantVentanillas;
     DLinkedList<Ventanillas*> listaVentanillas;
     HeapPriorityQueue<Tiquetes> *tiquetes;
 
@@ -29,11 +28,8 @@ public:
         this->codigo = codigo;
     }
 
-    void setCantVentanillas(int cantVentanillas){
-        this->cantVentanillas = cantVentanillas;
-    }
-
     void setListaVentanillas(int cantVentanillas){
+        listaVentanillas.clear();
         int numVentanilla = 1;
         string codVentanilla = getCodigo();
         for(int i=0; i<cantVentanillas; i++){
@@ -50,9 +46,6 @@ public:
     }
     string getCodigo(){
         return codigo;
-    }
-    int getCantVentanillas(){
-        return cantVentanillas;
     }
 
 };

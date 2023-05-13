@@ -56,6 +56,18 @@ public:
         }
     }
 
+    void modVentanillasTiposUsuario(string codigo, int cantVentanillas){
+        listaAreas.atStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            if(tempArea->codigo == codigo){
+                tempArea->setListaVentanillas(cantVentanillas);
+            }
+            listaAreas.next();
+        }
+    }
+
+
     void printTiposUsuario(){
         listaTiposUsuario.printP();
     }

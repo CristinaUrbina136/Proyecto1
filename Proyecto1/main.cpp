@@ -139,14 +139,15 @@ int main()
                 }
 
                 if (subSubOpcion == "2"){
-                    //pensando
-                    cout << "\nIngrese el codigo del area a eliminar: ";
+                    cout << "\nIngrese el codigo del area a modificar: ";
                     getline(cin, codigo);
                     cin.clear();
                     cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
                     getline(cin, cantidad);
                     cin.clear();
+                    sistema.modVentanillasTiposUsuario(codigo, stoi(cantidad));
                 }
+                sistema.printAreas();
             }
 
             while(subOpcion == "3" && subSubOpcion != "4"){
