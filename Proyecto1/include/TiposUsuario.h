@@ -1,27 +1,25 @@
 #ifndef TIPOSUSUARIO_H
 #define TIPOSUSUARIO_H
 
+#include<stdexcept>
+#include<iostream>
+#include<string>
+#include<ostream>
+
+using namespace std;
 
 class TiposUsuario
 {
-private:
+public:
     string tipo;
     string descripcion;
     int prioridad;
-
-public:
-    TiposUsuario(string tipo string descripcion int prioridad) {
-        this->tipo = tipo;
-        this->descripcion = descripcion;
-        this->prioridad = prioridad;
-
-    ~TiposUsuario() {}
 
     void setTipo(string tipo){
         this->tipo = tipo;
     }
 
-    string getTipo()){
+    string getTipo(){
         return tipo;
     }
 
@@ -33,11 +31,11 @@ public:
         return descripcion;
     }
 
-    void setPrioridad(string prioridad){
+    void setPrioridad(int prioridad){
         this->prioridad = prioridad;
     }
 
-    string getPrioridad()){
+    int getPrioridad(){
         return prioridad;
     }
 

@@ -14,9 +14,16 @@ using namespace std;
 class Tiquetes
 {
 public:
-    string codigo;
+    string codigoArea;
+    string codigoTiquete;
     char *fechaSolicitados;
+    int prioridadUsuario;
+    int prioridadServicio;
     int prioridadFinal;
+
+    void setPrioridadFinal(){
+        this->prioridadFinal = this->prioridadUsuario * 10 + this->prioridadServicio;
+    }
 
 
 
@@ -24,7 +31,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Tiquetes &t) {
-    os << "TIQUETE (" << t.codigo << ", " << t.fechaSolicitados << ", " << t.prioridadFinal << ")";
+    os << "TIQUETE (" << t.codigoTiquete << ", " << t.fechaSolicitados << ", " << t.prioridadFinal << ")";
     return os;
 }
 
