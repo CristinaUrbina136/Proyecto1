@@ -36,12 +36,10 @@ public:
         this->codigo = codigo;
     }
 
-    //Modifica la cantidad de ventanillas de un area, para hacerlo previamente en el sistema se pedira el codigo para
-    //identificar el objeto, esta funcion solo modifica la cantidad de ventanillas
-    void setCantVentanillas(int ventanillas){
+    void setCantVentanillas(int cantVentanillas){
         this->cantVentanillas = cantVentanillas;
     }
-    //Llena la lista de ventanillas con la cantidad de ventanillas solicitada
+
     void setListaVentanillas(int cantVentanillas){
         int numVentanilla = 1;
         string codVentanilla = getCodigo();
