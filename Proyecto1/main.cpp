@@ -36,6 +36,7 @@ int main()
 
     string opcion;
     string subOpcion;
+    string subSubOpcion;
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
         cout << "1. Estado de las colas" << endl;
@@ -79,9 +80,45 @@ int main()
             cout << "Opcion seleccionada: ";
             getline(cin, subOpcion);
             cin.clear();
+
+            while(subOpcion == "1" && subSubOpcion != "3"){
+                cout << "\nTIPOS DE USUARIO" << endl;
+                cout << "1. Agregar" << endl;
+                cout << "2. Eliminar" << endl;
+                cout << "3. Regresar" << endl;
+                cout << "Opcion seleccionada: ";
+                getline(cin, subSubOpcion);
+                cin.clear();
+            }
+
+            while(subOpcion == "2" && subSubOpcion != "4"){
+                cout << "\nAREAS" << endl;
+                cout << "1. Agregar" << endl;
+                cout << "2. Modificar cantidad de ventanillas" << endl;
+                cout << "3. Eliminar" << endl;
+                cout << "4. Regresar" << endl;
+                cout << "Opcion seleccionada: ";
+                getline(cin, subSubOpcion);
+                cin.clear();
+            }
+
+            while(subOpcion == "3" && subSubOpcion != "4"){
+                cout << "\nSERVICIOS" << endl;
+                cout << "1. Agregar" << endl;
+                cout << "2. Eliminar" << endl;
+                cout << "3. Reordenar" << endl;
+                cout << "4. Regresar" << endl;
+                cout << "Opcion seleccionada: ";
+                getline(cin, subSubOpcion);
+                cin.clear();
+            }
+
+            if(subOpcion == "4"){
+                cout << "\nLIMPIAR COLAS Y ESTADISTICAS" << endl;
+                cout << "INSERTAR MECANICA DE LIMPIA DE COLAS Y ESTADISTICAS" << endl;
+
+            }
         }
-
-
 
         if (opcion == "5"){
             cout << "\nINSERTAR ESTADISTICAS DEL SISTEMA" << endl;
