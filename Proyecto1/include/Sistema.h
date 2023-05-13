@@ -113,18 +113,21 @@ public:
         }
     }
 
+    //Obtiene la prioridad de un servicio en la lista
     int getPrioridadServicio(int pos){
         listaServicios.goToPos(pos);
         Servicios *tempServicio = listaServicios.getElement();
         return tempServicio->prioridad;
     }
 
+    //Obtiene la prioridad de un usuario en la lista
     int getPrioridadUsuario(int pos){
         listaTiposUsuario.goToPos(pos);
         TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
         return tempUsuario->prioridad;
     }
 
+    //Obtiene el codigo de area de un servicio en la lista
     string getCodAreaServicio(int pos){
         listaServicios.goToPos(pos);
         Servicios *tempServicio = listaServicios.getElement();
@@ -142,6 +145,20 @@ public:
     void printAreas(){
         listaAreas.printP();
     }
+
+    //Sirve para ver las ventanillas de un area a partir de su codigo
+    void verVentanillas(string codigo){
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            if(tempArea->codigo == codigo){
+                tempArea->verVentanillas();
+            }
+            listaAreas.next();
+        }
+    }
+
+
 
 };
 

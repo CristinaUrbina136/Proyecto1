@@ -25,6 +25,7 @@ int main()
     sistema.appendListaAreas("Area de servicio al cliente", "S", 4);
     sistema.appendListaAreas("Area de informacion", "I", 5);
     sistema.printAreas();
+    sistema.verVentanillas("C");
 
     cout << "\nSERVICIOS" << endl;
     sistema.appendListaServicios("Comprar boleto", 0, "C");

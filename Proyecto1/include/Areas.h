@@ -39,7 +39,6 @@ public:
             listaVentanillas.append(tempVentanilla);
             numVentanilla++;
         }
-        listaVentanillas.printP();
     }
     string getDescripcion(){
         return descripcion;
@@ -48,11 +47,16 @@ public:
         return codigo;
     }
 
+    void verVentanillas(){
+        listaVentanillas.printP();
+
+    }
+
 };
 
 
 ostream& operator <<(ostream &os, const Areas &a) {
-    os << "Area (" << a.descripcion << ", " << a.codigo << ")";
+    os << "AREA (" << a.descripcion << ", " << a.codigo << ")";
     return os;
 }
 
