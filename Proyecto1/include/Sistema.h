@@ -48,6 +48,14 @@ public:
         listaTiposUsuario.printP();
     }
 
+    void printServicios(){
+        listaServicios.printP();
+    }
+
+    void printAreas(){
+        listaAreas.printP();
+    }
+
 };
 
 #endif // SISTEMA_H

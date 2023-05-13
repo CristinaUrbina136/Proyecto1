@@ -10,16 +10,32 @@ int main()
     //Para probar
     Sistema sistema;
 
-    sistema.appendListaTiposUsuario("adulto mayor", 1);
-    sistema.appendListaTiposUsuario("discapacitado", 0);
-    sistema.appendListaTiposUsuario("usuario regular", 3);
-    sistema.appendListaTiposUsuario("representante organizacional", 2);
+    cout << "\nTIPOS USUARIO" << endl;
+    sistema.appendListaTiposUsuario("Adulto mayor", 1);
+    sistema.appendListaTiposUsuario("Discapacitado", 0);
+    sistema.appendListaTiposUsuario("Usuario regular", 3);
+    sistema.appendListaTiposUsuario("Representante organizacional", 2);
     sistema.printTiposUsuario();
+
+    cout << "\nAREAS" << endl;
+    sistema.appendListaAreas("Area de cajas", "C", 3);
+    sistema.appendListaAreas("Area de servicio al cliente", "S", 4);
+    sistema.appendListaAreas("Area de informacion", "I", 5);
+    sistema.printAreas();
+
+    //ESTO SE TIENE QUE ARREGLAR
+    cout << "\nSERVICIOS" << endl;
+    sistema.appendListaServicios("Comprar boleto", 0, "C");
+    sistema.appendListaServicios("Cambiar boleto", 1, "I");
+    sistema.appendListaServicios("Solicitar informacion", 1, "I");
+    sistema.appendListaServicios("Realizar un reclamo", 2, "S");
+    sistema.printServicios();
+
 
     //MENU TEMPORAL
 
     string opcion;
-    cout << "MENU PRINCIPAL" << endl;
+    cout << "\nMENU PRINCIPAL" << endl;
     cout << "1. Estado de las colas" << endl;
     cout << "2. Tiquetes" << endl;
 

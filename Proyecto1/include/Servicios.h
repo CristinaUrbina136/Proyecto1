@@ -44,7 +44,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Servicios &s) {
-    os << "Servicios (" << s.descripcion << ", " << s.prioridad << s.codigoArea << ")";
+    os << "Servicios (" << s.descripcion << ", " << s.prioridad << ", " << s.codigoArea << ")";
     return os;
 }
 
