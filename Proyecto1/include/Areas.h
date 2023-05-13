@@ -55,13 +55,13 @@ public:
         return cantVentanillas;
     }
 
-
-
-
-
-
 };
 
+
+ostream& operator <<(ostream &os, const Areas &a) {
+    os << "Area (" << a.descripcion << ", " << a.codigo << ")";
+    return os;
+}
 
 
 #endif // AREAS_H
