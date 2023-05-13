@@ -4,6 +4,7 @@
 #include<stdexcept>
 #include<iostream>
 #include<string>
+#include <ostream>
 #include "DNode.h"
 #include "Tiquetes.h"
 
@@ -11,14 +12,13 @@ using namespace std;
 
 //Esta clase representa al objeto Ventanilla
 class Ventanillas {
-private:
+public:
     int atendidos = 0;
     string codigoVentanilla;
     string codigoArea;
-    tiquete *ultimoTiquete;
+    Tiquetes *ultimoTiquete;
 
-public:
-    Ventanillas(string codigoVentanilla, string codigoArea, tiquete *ultimoTiquete = nullptr) {
+    Ventanillas(string codigoVentanilla, string codigoArea, Tiquetes *ultimoTiquete = nullptr) {
         this->codigoVentanilla = codigoVentanilla;
         this->codigoArea = codigoArea;
         this->ultimoTiquete = ultimoTiquete;
@@ -41,11 +41,11 @@ public:
     int getAtendidos() {
         return atendidos;
     }
-    void setUltimoTiquete(tiquete *ultimoTiquete){
+    void setUltimoTiquete(Tiquetes *ultimoTiquete){
         atendidos++;
         this->ultimoTiquete = ultimoTiquete;
     }
-    tiquete* getUltimoTiquete() {
+    Tiquetes *getUltimoTiquete() {
         return ultimoTiquete;
     }
 };

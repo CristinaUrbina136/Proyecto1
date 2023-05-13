@@ -59,10 +59,11 @@
 	<ctime>
 	"Areas.h"
 
-1683672907 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
+1683975315 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
 	<stdexcept>
 	<iostream>
 	<string>
+	<ostream>
 	"HeapPriorityQueue.h"
 	"DLinkedList.h"
 	"Ventanillas.h"
@@ -93,18 +94,20 @@
 
 1680058028 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\dnode.h
 
-1683673392 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\ventanillas.h
+1683975215 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\ventanillas.h
 	<stdexcept>
 	<iostream>
 	<string>
+	<ostream>
 	"DNode.h"
 	"Tiquetes.h"
 
-1683673285 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiquetes.h
+1683975115 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiquetes.h
 	<stdexcept>
 	<iostream>
 	<string>
 	<ctime>
+	<ostream>
 	"Areas.h"
 
 1683614593 source:c:\users\cano1\onedrive\escritorio\i semestre 2023\ed\proyectos\proyecto0\proyecto1\proyecto1\main.cpp

@@ -4,6 +4,7 @@
 #include<stdexcept>
 #include<iostream>
 #include<string>
+#include<ostream>
 #include "HeapPriorityQueue.h"
 #include "DLinkedList.h"
 #include "Ventanillas.h"
@@ -20,9 +21,9 @@ private:
     string codigo;
     //Para manejar las ventanillas
     int cantVentanillas;
-    DLinkedList<Ventanillas> listaVentanillas;
+    DLinkedList<Ventanillas> *listaVentanillas;
     //Cola de prioridad de tiquetes
-    HeapPriorityQueue<Tiquetes> tiquetes;
+    HeapPriorityQueue<Tiquetes> *tiquetes;
 
 public:
     //Se agregaran las restricciones despues

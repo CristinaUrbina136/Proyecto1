@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include <ctime>
+#include <ostream>
 #include "Areas.h"
 
 using namespace std;
