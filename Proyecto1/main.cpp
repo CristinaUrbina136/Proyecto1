@@ -68,6 +68,7 @@ int main()
         }
 
         //SUBMENU ADMINISTRACION
+        //ES EL PRIMERO QUE SE ESTA TRABAJANDO
         while (opcion == "4" && subOpcion != "5"){
             cout << "\nSUBMENU ADMINISTRACION" << endl;
             cout << "1. Tipos de usuario" << endl;
@@ -79,6 +80,8 @@ int main()
             getline(cin, subOpcion);
             cin.clear();
         }
+
+
 
         if (opcion == "5"){
             cout << "\nINSERTAR ESTADISTICAS DEL SISTEMA" << endl;
