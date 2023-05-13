@@ -89,12 +89,14 @@ int main()
                 getline(cin, temp1);
                 cin.clear();
                 prioridadU = sistema.getPrioridadUsuario(stoi(temp1));
+
                 sistema.printServicios();
                 cout << "\nIngrese el servicio al que desea acceder: ";
                 getline(cin, temp2);
                 cin.clear();
                 codigo = sistema.getCodAreaServicio(stoi(temp2));
                 prioridadS = sistema.getPrioridadServicio(stoi(temp2));
+
                 Tiquetes tempTiquete;
                 tempTiquete.setCodigoTiquete(codigo, tiquetesGlobal);
                 tempTiquete.setPrioridadFinal(prioridadU, prioridadS);

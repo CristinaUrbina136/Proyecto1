@@ -92,12 +92,25 @@ public:
         }
     }
 
+    //Reordena los servicios, segun se indica en administracion
     void reorderServicios(int posActual, int posDestino){
         listaServicios.goToPos(posActual);
         Servicios *tempServicio = listaServicios.getElement();
         listaServicios.remove();
         listaServicios.goToPos(posDestino);
         listaServicios.insert(tempServicio);
+    }
+
+    //Inserta el tiquete en la cola de su respectiva area
+    void insertarCola(Tiquetes tiquete, string codigo){
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            if(tempArea->codigo == codigo){
+                tempArea->tiquetes->insert(tiquete,tiquete.prioridadFinal);
+            }
+            listaAreas.next();
+        }
     }
 
     int getPrioridadServicio(int pos){
