@@ -15,7 +15,7 @@ class Tiquetes
 {
 public:
     string codigoTiquete;
-    char *fechaSolicitados;
+    char *fechaSolicitado;
     int prioridadFinal;
 
     void setCodigoTiquete(string codigoArea, int tiquetesGlobal) {
@@ -26,6 +26,11 @@ public:
         this->prioridadFinal = prioridadUsuario * 10 + prioridadServicio;
     }
 
+    //Pone la fecha en tiempo local
+    void setFechaSolicitado(){
+        time_t now = time(0);
+        fechaSolicitado = ctime(&now);
+    }
 
 
 
@@ -33,7 +38,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Tiquetes &t) {
-    os << "TIQUETE (" << t.codigoTiquete << ", " << t.fechaSolicitados << ", " << t.prioridadFinal << ")";
+    os << "TIQUETE (" << t.codigoTiquete << ", " << t.fechaSolicitado << ", " << t.prioridadFinal << ")";
     return os;
 }
 
