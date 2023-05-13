@@ -44,6 +44,8 @@ int main()
     string prioridad;
     string codigo;
     string cantidad;
+    string temp1;
+    string temp2;
 
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
@@ -152,6 +154,7 @@ int main()
                 }
 
                 if (subSubOpcion == "3"){
+                    //Se tiene que trabajar pensando en que cuando se elimina un area se eliminan sus servicios asociados
                     cout << "\nIngrese el codigo del area a eliminar: ";
                     getline(cin, codigo);
                     cin.clear();
@@ -184,11 +187,20 @@ int main()
                 }
 
                 if (subSubOpcion == "2"){
-                    //se tiene que trabajar pensando en que no se puede asignar un area que no existe a un servicio
                     cout << "\nIngrese la descripcion del servicio a eliminar: ";
                     getline(cin, descripcion);
                     cin.clear();
                     sistema.removeListaServicios(descripcion);
+                }
+
+                if (subSubOpcion == "3"){
+                    cout << "\nIngrese la posicion del servicio a reubicar en la lista: ";
+                    getline(cin, temp1);
+                    cin.clear();
+                    cout << "\nIngrese la posicion destino: ";
+                    getline(cin, temp2);
+                    cin.clear();
+
                 }
 
 
