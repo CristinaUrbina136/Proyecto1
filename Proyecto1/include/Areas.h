@@ -50,8 +50,9 @@ public:
             Ventanillas *tempVentanilla = new Ventanillas();
             tempVentanilla->setCodigoVentanilla(tempCodigo);
             listaVentanillas.append(tempVentanilla);
+            numVentanilla++;
         }
-        listaVentanillas.print();
+        listaVentanillas.printP();
 
     }
     string getCodigo(){

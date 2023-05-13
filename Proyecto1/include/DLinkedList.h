@@ -112,6 +112,15 @@ public:
         }
         cout << "]" << endl;
     }
+    void printP() {
+        cout << "[ ";
+        DNode<E> *temp = head->next;
+        for (int i = 0; i < size; i ++) {
+            cout << *(temp->element) << " ";
+            temp = temp->next;
+        }
+        cout << "]" << endl;
+    }
 };
 
 #endif // DLINKEDLIST_H

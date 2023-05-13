@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683584106 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
+1683976734 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
@@ -59,7 +59,7 @@
 	<ctime>
 	"Areas.h"
 
-1683976375 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
+1683976904 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -84,7 +84,7 @@
 
 1680043067 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\priorityqueue.h
 
-1683584491 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\dlinkedlist.h
+1683976859 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\dlinkedlist.h
 	<stdexcept>
 	<iostream>
 	"List.h"
