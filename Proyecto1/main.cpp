@@ -95,14 +95,23 @@ int main()
                 cin.clear();
 
                 if (subSubOpcion == "1"){
-                    cout << "Ingrese la descripcion del tipo de usuario a agregar: ";
+                    cout << "\nIngrese la descripcion del tipo de usuario a agregar: ";
                     getline(cin, descripcion);
                     cin.clear();
-                    cout << "Ingrese la prioridad del tipo de usuario a agregar: ";
+                    cout << "\nIngrese la prioridad del tipo de usuario a agregar: ";
                     getline(cin, prioridad);
                     cin.clear();
                     sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
                 }
+
+                if (subSubOpcion == "2"){
+                    cout << "\nIngrese la descripcion del tipo de usuario a eliminar: ";
+                    getline(cin, descripcion);
+                    cin.clear();
+                    sistema.removeListaTiposUsuario(descripcion);
+                }
+
+                sistema.printTiposUsuario();
 
             }
 
