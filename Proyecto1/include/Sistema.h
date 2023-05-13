@@ -44,6 +44,10 @@ public:
         listaAreas.append(tempArea);
     }
 
+    void removeListaTiposUsuario(string descripcion){
+
+    }
+
     void printTiposUsuario(){
         listaTiposUsuario.printP();
     }
