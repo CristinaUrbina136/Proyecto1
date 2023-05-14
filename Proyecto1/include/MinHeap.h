@@ -107,12 +107,6 @@ public:
             cout << elements[i] << " ";
         cout << "]" << endl;
     }
-    void printP() {
-        cout << "[ ";
-        for (int i = 0; i < size; i++)
-            // cout << *(elements[i]) << " ";
-        cout << "]" << endl;
-    }
 };
 
 #endif // MINHEAP_H

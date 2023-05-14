@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1684005053 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
+1684023700 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
@@ -59,7 +59,7 @@
 	<ctime>
 	"Areas.h"
 
-1684005495 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
+1684023246 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\areas.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -68,18 +68,18 @@
 	"DLinkedList.h"
 	"Ventanillas.h"
 
-1684001948 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\heappriorityqueue.h
+1684023273 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\heappriorityqueue.h
 	<stdexcept>
 	<iostream>
 	"MinHeap.h"
 	"KVPair.h"
 	"PriorityQueue.h"
 
-1684005377 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\minheap.h
+1684022540 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\minheap.h
 	<stdexcept>
 	<iostream>
 
-1682027070 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\kvpair.h
+1684023280 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\kvpair.h
 	<iostream>
 
 1680043067 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\priorityqueue.h

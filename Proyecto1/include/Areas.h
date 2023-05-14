@@ -58,7 +58,7 @@ public:
     }
 
     void verCola(){
-        colaTiquetes.printP();
+        colaTiquetes.print();
     }
 
 };

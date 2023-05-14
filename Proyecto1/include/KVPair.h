@@ -45,7 +45,7 @@ public:
 
 template <typename K, typename V>
 ostream& operator <<(ostream &os, const KVPair<K, V> &pair) {
-    os << "(" << pair.key << ", " << pair.value << ")";
+    os << "(" << (pair.key) << ", " << (pair.value) << ")";
     return os;
 }
 

@@ -107,7 +107,7 @@ int main()
                 sistema.insertarCola(tempTiquete, codigo);
                 tiquetesGlobal++;
 
-                //sistema.verCola(codigo);
+                sistema.verCola(codigo);
             }
 
 
