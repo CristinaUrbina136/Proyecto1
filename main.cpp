@@ -13,26 +13,19 @@ int main()
 
     Sistema sistema;
 
-    cout << "\nTIPOS USUARIO" << endl;
     sistema.appendListaTiposUsuario("Adulto mayor", 1);
     sistema.appendListaTiposUsuario("Discapacitado", 0);
     sistema.appendListaTiposUsuario("Usuario regular", 3);
     sistema.appendListaTiposUsuario("Representante organizacional", 2);
-    sistema.printTiposUsuario();
 
-    cout << "\nAREAS" << endl;
     sistema.appendListaAreas("Area de cajas", "C", 3);
     sistema.appendListaAreas("Area de servicio al cliente", "S", 4);
     sistema.appendListaAreas("Area de informacion", "I", 5);
-    sistema.printAreas();
-    sistema.verVentanillas("C");
 
-    cout << "\nSERVICIOS" << endl;
     sistema.appendListaServicios("Comprar boleto", 0, "C");
     sistema.appendListaServicios("Cambiar boleto", 1, "I");
     sistema.appendListaServicios("Solicitar informacion", 1, "I");
     sistema.appendListaServicios("Realizar un reclamo", 2, "S");
-    sistema.printServicios();
 
 
 
@@ -95,6 +88,7 @@ int main()
             cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
             getline(cin, temp2);
             cin.clear();
+
             sistema.atender(temp1, temp2);
         }
 
@@ -288,26 +282,21 @@ int main()
 
             //LIMPIAR COLAS Y ESTADISTICAS
             if(subOpcion == "4"){
-                cout << "\nLIMPIAR COLAS Y ESTADISTICAS" << endl;
-                cout << "INSERTAR MECANICA DE LIMPIA DE COLAS Y ESTADISTICAS" << endl;
-
+                sistema.limpiarEstadisticas();
             }
         }
 
         //SUBMENU ESTADISTICAS DEL SISTEMA
         if (opcion == "5"){
-            cout << "\nINSERTAR ESTADISTICAS DEL SISTEMA" << endl;
-            cout << "Cantidad de tiquetes emitidos por cada tipo de usuario: ";
-            sistema.printTiposUsuario();
-            cout << endl;
-            cout << "Cantidad de tiquetes solicitados por servicio: ";
-            sistema.printServicios();
-            cout << endl;
+            sistema.printEstadisticas();
         }
 
+        subOpcion = "0";
+        subSubOpcion = "0";
 
     }
 
+    cout << "\nADIOS :)" << endl;
 
     return 0;
 }

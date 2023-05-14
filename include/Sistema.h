@@ -150,18 +150,6 @@ public:
         return tempUsuario->descripcion;
     }
 
-    void printTiposUsuario(){
-        listaTiposUsuario.printP();
-    }
-
-    void printServicios(){
-        listaServicios.printP();
-    }
-
-    void printAreas(){
-        listaAreas.printP();
-    }
-
     //Sirve para ver las ventanillas de un area a partir de su codigo
     void verVentanillas(string codigo){
         listaAreas.goToStart();
@@ -193,8 +181,6 @@ public:
         while (!listaTiposUsuario.atEnd()){
             TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
             if(tempUsuario->descripcion == descUsuario){
-                cout << "cantidad previa: " << tempUsuario->tiquetesSolicitados << endl;
-                cout << "cantidad actual: " << tempUsuario->tiquetesSolicitados << endl;
                 tempUsuario->agregarTiqueteSolicitado();
  ;
             }
@@ -224,7 +210,6 @@ public:
     void printEstadoColas(){
         cout << endl;
         cout << "Lista de areas" << endl;
-        printAreas();
         listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             cout << endl;
@@ -292,6 +277,8 @@ public:
                     if(tempVentanilla->codigoVentanilla == codigo + numVentanilla){
                         //Le asigna el tiquete que ha sido sacado de la cola
                         tempVentanilla->ultimoTiquete = tempTiquete;
+                        //Agrega el tiquete a las estadistica
+                        tempVentanilla->agregarTiqueteAtendido();
                     }
                     tempArea->listaVentanillas.next();
                 }
@@ -300,7 +287,132 @@ public:
         }
     }
 
+    //Imprime las estadisticas
     void printEstadisticas(){
+        Areas *tempArea;
+        string temp;
+        int a = 0;
+        int b = 0;
+
+        //Estadistica tiempo de espera promedio por cada area
+        cout << endl;
+        cout << "Tiempo de espera promedio por cada area" << endl;
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            tempArea = listaAreas.getElement();
+            tempArea->calcularTiempoEsperaPromedio();
+            b = tempArea->tiempoEsperaPromedio;
+            temp = to_string(b);
+            cout << to_string(a) << ". " << tempArea->descripcion << ", con codigo " << tempArea->codigo << " tiene un tiempo de espera promedio de " << temp << " segundos" <<endl;
+            a++;
+            listaAreas.next();
+        }
+
+        //Estadistica cantidad de tiquetes dispensados por area
+        cout << endl;
+        cout << "Cantidad de tiquetes dispensados por area" << endl;
+        a = 0;
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            tempArea = listaAreas.getElement();
+            b = tempArea->tiquetesSolicitados;
+            temp = to_string(b);
+            cout << to_string(a) << ". " << tempArea->descripcion << ", con codigo " << tempArea->codigo << " ha dispensado " << temp << " tiquetes" << endl;
+            a++;
+            listaAreas.next();
+        }
+
+        //Estadistica cantidad de tiquetes atendidos por ventanilla
+        cout << endl;
+        cout << "Cantidad de tiquetes atendidos por ventanilla" << endl;
+        a = 0;
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            tempArea = listaAreas.getElement();
+            cout << tempArea->descripcion << " con codigo " << tempArea->codigo << endl;
+            tempArea->listaVentanillas.goToStart();
+            while(!tempArea->listaVentanillas.atEnd()){
+                Ventanillas *tempVentanilla = tempArea->listaVentanillas.getElement();
+                b = tempVentanilla->tiquetesAtendidos;
+                temp = to_string(b);
+                cout << to_string(a) << ". " << tempVentanilla->codigoVentanilla << " ha atendido " << temp << " tiquetes" << endl;
+                tempArea->listaVentanillas.next();
+            }
+            a = 0;
+            listaAreas.next();
+        }
+
+        //Estadistica cantidad de tiquetes solicitados por servicio
+        cout << endl;
+        cout << "Cantidad de tiquetes solicitados por servicio" << endl;
+        a = 0;
+        listaServicios.goToStart();
+        while (!listaServicios.atEnd()){
+            Servicios *tempServicio = listaServicios.getElement();
+            temp = to_string(tempServicio->tiquetesSolicitados);
+            cout << to_string(a) << ". " << tempServicio->descripcion << " tiene una cantidad de tiquetes solicitados " << temp << endl;
+            a++;
+            listaServicios.next();
+        }
+
+        //Estadistica cantidad de tiquetes emitidos por cada tipo de usuario
+        cout << endl;
+        cout << "Cantidad de tiquetes emitidos por cada tipo de usuario" << endl;
+        a = 0;
+        listaTiposUsuario.goToStart();
+        while (!listaTiposUsuario.atEnd()){
+            TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+            temp = to_string(tempUsuario->tiquetesSolicitados);
+            cout << to_string(a) << ". " << tempUsuario->descripcion << " tiene una cantidad de tiquetes emitidos " << temp << endl;
+            a++;
+            listaTiposUsuario.next();
+
+        }
+    }
+
+    //Limpia todas las estadisticas
+    void limpiarEstadisticas(){
+        Areas *tempArea;
+
+        //Limpia las estadisticas de las areas y sus respectivas colas
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            tempArea = listaAreas.getElement();
+            tempArea->tiempoTotal = 0;
+            tempArea->tiquetesSolicitados = 0;
+            tempArea->tiempoEsperaPromedio =0;
+            tempArea->colaTiquetes.clear();
+            listaAreas.next();
+        }
+
+        //Limpia las estadisticas de las ventanillas
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            tempArea = listaAreas.getElement();
+            tempArea->listaVentanillas.goToStart();
+            while (!tempArea->listaVentanillas.atEnd()){
+                Ventanillas *tempVentanilla = tempArea->listaVentanillas.getElement();
+                tempVentanilla->tiquetesAtendidos = 0;
+                tempArea->listaVentanillas.next();
+            }
+            listaAreas.next();
+        }
+
+        //Limpia las estadisticas de los servicios
+        listaServicios.goToStart();
+        while (!listaServicios.atEnd()){
+            Servicios *tempServicio = listaServicios.getElement();
+            tempServicio->tiquetesSolicitados = 0;
+            listaServicios.next();
+        }
+
+        //Limpia las estadisticas de los tipos de usuario
+        listaTiposUsuario.goToStart();
+        while (!listaTiposUsuario.atEnd()){
+            TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+            tempUsuario->tiquetesSolicitados = 0;
+            listaTiposUsuario.next();
+        }
 
     }
 

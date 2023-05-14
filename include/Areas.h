@@ -20,6 +20,14 @@ public:
     DLinkedList<Ventanillas*> listaVentanillas;
     HeapPriorityQueue<Tiquetes*> colaTiquetes;
     int tiquetesSolicitados;
+    int tiempoTotal;
+    int tiempoEsperaPromedio;
+
+    Areas(){
+        tiquetesSolicitados = 0;
+        tiempoTotal = 0;
+        tiempoEsperaPromedio = 0;
+    }
 
 
     void setDescripcion(string descripcion){
@@ -48,7 +56,10 @@ public:
     }
 
     Tiquetes* atenderCola(){
-        colaTiquetes.removeMin();
+        Tiquetes *tempTiquete = colaTiquetes.removeMin();
+        tempTiquete->tiempoAtendido = time(0) - tempTiquete->tiempoSolicitado;
+        tiempoTotal += tempTiquete->tiempoAtendido;
+        return tempTiquete;
     }
 
     string getDescripcion(){
@@ -70,6 +81,15 @@ public:
     }
     int getTiquetesSolicitados() {
         return tiquetesSolicitados;
+    }
+
+    int calcularTiempoEsperaPromedio() {
+        if (tiquetesSolicitados == 0){
+            return 0;
+        }
+        else {
+            return tiempoEsperaPromedio = tiempoTotal/tiquetesSolicitados;
+        }
     }
 
 };

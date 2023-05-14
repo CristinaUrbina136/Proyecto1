@@ -16,8 +16,11 @@ public:
     string codigoVentanilla;
     string codigoArea;
     Tiquetes *ultimoTiquete;
-    int tiquetesSolicitados;
+    int tiquetesAtendidos;
 
+    Ventanillas(){
+        tiquetesAtendidos = 0;
+    }
 
     void setCodigoVentanilla(string codigoVentanilla){
         this->codigoVentanilla = codigoVentanilla;
@@ -32,12 +35,11 @@ public:
         return codigoArea;
     }
 
-
-    void agregarTiqueteSolicitado() {
-        tiquetesSolicitados++;
+    int getTiquetesAtendidos() {
+        return tiquetesAtendidos;
     }
-    int getTiquetesSolicitados() {
-        return tiquetesSolicitados;
+    void agregarTiqueteAtendido(){
+        tiquetesAtendidos++;
     }
 };
 

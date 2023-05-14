@@ -15,8 +15,12 @@ class Tiquetes
 {
 public:
     string codigoTiquete;
-    char *fechaSolicitado;
     int prioridadFinal;
+    //Para impresion
+    char *fechaSolicitado;
+    //Para hacer el calculo de tiempo transcurrido hasta la atencion
+    int tiempoSolicitado;
+    int tiempoAtendido;
 
     void setCodigoTiquete(string codigoArea, int tiquetesGlobal) {
         this->codigoTiquete = codigoArea + to_string(tiquetesGlobal);
@@ -29,6 +33,7 @@ public:
     //Pone la fecha en tiempo local
     void setFechaSolicitado(){
         time_t now = time(0);
+        tiempoSolicitado = now;
         fechaSolicitado = ctime(&now);
     }
 
