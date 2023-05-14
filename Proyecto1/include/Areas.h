@@ -41,9 +41,8 @@ public:
         }
     }
 
-    void insertarCola(Tiquetes tiquete, int prioridad){
-        Tiquetes *tempTiquete = &tiquete;
-        colaTiquetes.insert(tempTiquete, prioridad);
+    void insertarCola(Tiquetes *tiquete, int prioridad){
+        colaTiquetes.insert(tiquete, prioridad);
     }
 
     string getDescripcion(){

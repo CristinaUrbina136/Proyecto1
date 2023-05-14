@@ -101,16 +101,16 @@ int main()
                 codigo = sistema.getCodAreaServicio(stoi(temp2));
                 prioridadS = sistema.getPrioridadServicio(stoi(temp2));
 
-                Tiquetes tempTiquete;
-                tempTiquete.setCodigoTiquete(codigo, tiquetesGlobal);
-                tempTiquete.setPrioridadFinal(prioridadU, prioridadS);
-                tempTiquete.setFechaSolicitado();
+                Tiquetes *tempTiquete = new Tiquetes();
+                tempTiquete->setCodigoTiquete(codigo, tiquetesGlobal);
+                tempTiquete->setPrioridadFinal(prioridadU, prioridadS);
+                tempTiquete->setFechaSolicitado();
 
                 var1 = sistema.getDescUsuario(stoi(temp1));
                 var2 = sistema.getDescServicio(stoi(temp2));
                 sistema.agregarEstadistica(var1, var2);
 
-                tempTiquete.verTiquete();
+                tempTiquete->verTiquete();
                 sistema.insertarCola(tempTiquete, codigo);
                 tiquetesGlobal++;
 
