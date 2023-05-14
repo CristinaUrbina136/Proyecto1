@@ -159,6 +159,7 @@ public:
         }
     }
 
+    //ARREGLAR URGENTE
     //Sirve para ver la cola de tiquetes de un area a partir de su codigo
     void verCola(string codigo){
         listaAreas.goToStart();
@@ -171,6 +172,43 @@ public:
         }
     }
 
+    //Agrega un tiquete al tipo de usuario y servicio indicados
+    void agregarEstadistica(string descUsuario, string descServicio){
+        listaTiposUsuario.goToStart();
+        while (!listaTiposUsuario.atEnd()){
+            TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+            if(tempUsuario->descripcion == descUsuario){
+                cout << "cantidad previa: " << tempUsuario->tiquetesSolicitados << endl;
+                cout << "cantidad actual: " << tempUsuario->tiquetesSolicitados << endl;
+                tempUsuario->agregarTiqueteSolicitado();
+ ;
+            }
+            listaTiposUsuario.next();
+        }
+
+        listaServicios.goToStart();
+        while (!listaServicios.atEnd()){
+            Servicios *tempServicio = listaServicios.getElement();
+            if(tempServicio->descripcion == descServicio){
+                tempServicio->agregarTiqueteSolicitado();
+            }
+            listaServicios.next();
+        }
+    }
+
+    //Obtiene la descripcion de un servicio en la lista
+    string getDescServicio(int pos){
+        listaServicios.goToPos(pos);
+        Servicios *tempServicio = listaServicios.getElement();
+        return tempServicio->descripcion;
+    }
+
+    //Obtiene la descripcion de un tipo de usuario en la lista
+    string getDescUsuario(int pos){
+        listaTiposUsuario.goToPos(pos);
+        TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+        return tempUsuario->descripcion;
+    }
 
 
 };

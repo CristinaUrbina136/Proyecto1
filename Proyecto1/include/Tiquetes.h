@@ -37,6 +37,8 @@ public:
     }
 
 
+
+
 };
 
 ostream& operator <<(ostream &os, const Tiquetes &t) {

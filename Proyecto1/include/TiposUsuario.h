@@ -13,6 +13,11 @@ class TiposUsuario
 public:
     string descripcion;
     int prioridad;
+    int tiquetesSolicitados;
+
+    TiposUsuario(){
+        tiquetesSolicitados = 0;
+    }
 
     void setDescripcion(string descripcion){
         this->descripcion = descripcion;
@@ -30,10 +35,15 @@ public:
         return prioridad;
     }
 
+    void agregarTiqueteSolicitado() {
+        tiquetesSolicitados++;
+
+    }
+
 };
 
 ostream& operator <<(ostream &os, const TiposUsuario &tu) {
-    os << "TiposUsuario (" << tu.descripcion << ", " << tu.prioridad << ")";
+    os << "TIPOS DE USUARIO (" << tu.descripcion << ", " << tu.prioridad << "," << tu.tiquetesSolicitados << ")";
     return os;
 }
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1684023700 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
+1684026414 source:c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
@@ -102,7 +102,7 @@
 	"DNode.h"
 	"Tiquetes.h"
 
-1683993627 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiquetes.h
+1684025291 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiquetes.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -164,7 +164,7 @@
 	<ctime>
 	"Areas.h"
 
-1684005053 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
+1684026414 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\sistema.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -173,11 +173,11 @@
 	"Servicios.h"
 	"Areas.h"
 
-1683979280 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiposusuario.h
+1684026180 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\tiposusuario.h
 	<stdexcept>
 	<iostream>
 	<string>
 	<ostream>
 
-1684024714 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\servicios.h
+1684025564 c:\users\cristina\desktop\proyecto1\proyecto1\proyecto1\include\servicios.h
 

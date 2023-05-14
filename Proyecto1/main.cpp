@@ -51,6 +51,8 @@ int main()
     string cantidad;
     string temp1;
     string temp2;
+    string var1;
+    string var2;
 
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
@@ -85,6 +87,7 @@ int main()
 
             if (subOpcion == "1"){
                 //Funciona con las posiciones de las respectivas listas, despues se acomodara para que quede bonito
+                //Esta desordenado
                 sistema.printTiposUsuario();
                 cout << "\nIngrese su tipo de usuario: ";
                 getline(cin, temp1);
@@ -102,6 +105,10 @@ int main()
                 tempTiquete.setCodigoTiquete(codigo, tiquetesGlobal);
                 tempTiquete.setPrioridadFinal(prioridadU, prioridadS);
                 tempTiquete.setFechaSolicitado();
+
+                var1 = sistema.getDescUsuario(stoi(temp1));
+                var2 = sistema.getDescServicio(stoi(temp2));
+                sistema.agregarEstadistica(var1, var2);
 
                 tempTiquete.verTiquete();
                 sistema.insertarCola(tempTiquete, codigo);
@@ -247,6 +254,12 @@ int main()
 
         if (opcion == "5"){
             cout << "\nINSERTAR ESTADISTICAS DEL SISTEMA" << endl;
+            cout << "Cantidad de tiquetes emitidos por cada tipo de usuario: ";
+            sistema.printTiposUsuario();
+            cout << endl;
+            cout << "Cantidad de tiquetes solicitados por servicio: ";
+            sistema.printServicios();
+            cout << endl;
         }
 
 

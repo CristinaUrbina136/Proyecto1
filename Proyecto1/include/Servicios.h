@@ -8,8 +8,11 @@ public:
     string descripcion;
     string codigoArea;
     int prioridad;
-    int tiquetes;
+    int tiquetesSolicitados;
 
+    Servicios(){
+        tiquetesSolicitados = 0;
+    }
 
     void setCodigoArea(string codigoArea){
         this->codigoArea = codigoArea;
@@ -34,16 +37,16 @@ public:
     string getDescripcion(){
         return descripcion;
     }
-    void tiqueteAgregado() {
-        tiquetes += 1;
+    void agregarTiqueteSolicitado() {
+        tiquetesSolicitados++;
     }
-    int getTiquetes() {
-        return tiquetes;
+    int getTiquetesSolicitados() {
+        return tiquetesSolicitados;
     }
 };
 
 ostream& operator <<(ostream &os, const Servicios &s) {
-    os << "Servicios (" << s.descripcion << ", " << s.prioridad << ", " << s.codigoArea << ")";
+    os << "Servicios (" << s.descripcion << ", " << s.prioridad << ", " << s.codigoArea << ", " << s.tiquetesSolicitados << ")";
     return os;
 }
 
