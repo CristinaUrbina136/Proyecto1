@@ -10,11 +10,6 @@ public:
     int prioridad;
     int tiquetes;
 
-    void operator =(const Servicios &s) {
-        this->codigoArea = s.codigoArea;
-        this->descripcion = s.descripcion;
-        this->tiquetes = s.tiquetes;
-    }
 
     void setCodigoArea(string codigoArea){
         this->codigoArea = codigoArea;
