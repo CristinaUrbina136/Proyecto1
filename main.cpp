@@ -107,12 +107,24 @@ int main()
                 cout << "\nIngrese su tipo de usuario: ";
                 getline(cin, temp1);
                 cin.clear();
+                while (temp1 != "0" && temp1 != "1" && temp1 != "2" && temp1 != "3"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    cout << "\nIngrese su tipo de usuario: ";
+                    getline(cin, temp1);
+                    cin.clear();
+                }
 
                 cout << "\nLista de tipos de servicios" << endl;
                 sistema.printDescServicios();
                 cout << "\nIngrese el servicio al que desea acceder: ";
                 getline(cin, temp2);
                 cin.clear();
+                while (temp2 != "0" && temp2 != "1" && temp2 != "2" && temp2 != "3"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    cout << "\nIngrese el servicio al que desea acceder: ";
+                    getline(cin, temp2);
+                    cin.clear();
+                }
 
                 //Obtiene el codigo de area del servicio, a partir del numero (posicion en lista) seleccionado por el usuario
                 codigo = sistema.getCodAreaServicio(stoi(temp2));
@@ -141,6 +153,9 @@ int main()
                 sistema.insertarCola(tempTiquete, codigo);
                 //Suma al contador de tiquetes global
                 tiquetesGlobal++;
+                cout << "Tiquete generado con exito!" << endl;
+            } else if (subOpcion != "1" && subOpcion != "2"){
+                cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
             }
         }
 
@@ -289,6 +304,10 @@ int main()
         //SUBMENU ESTADISTICAS DEL SISTEMA
         if (opcion == "5"){
             sistema.printEstadisticas();
+        }
+
+        if (opcion != "1" && opcion != "2" && opcion != "3" && opcion != "4" && opcion != "5" && opcion != "6"){
+            cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
         }
 
         subOpcion = "0";
