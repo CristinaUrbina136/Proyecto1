@@ -229,23 +229,46 @@ int main()
 
                 //Agrega un tipo de usuario a la lista de tipos de usuario
                 if (subSubOpcion == "1"){
-                    cout << "\nIngrese la descripcion del tipo de usuario a agregar: ";
-                    getline(cin, descripcion);
-                    cin.clear();
-                    cout << "\nIngrese la prioridad del tipo de usuario a agregar: ";
-                    getline(cin, prioridad);
-                    cin.clear();
-                    sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
-                    cout << "Tipo de usuario creado con exito!\n";
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la descripcion del tipo de usuario a agregar: ";
+                        getline(cin, descripcion);
+                        cin.clear();
+                        if (descripcion == ""){
+                            cout << "Debe escribir una descripcion valida!" << endl;
+                        } else {
+                            continuar = false;
+                        }
+                    }
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la prioridad del tipo de usuario a agregar: ";
+                        getline(cin, prioridad);
+                        cin.clear();
+                        if (esNum(prioridad) == true){
+                            sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
+                            cout << "Tipo de usuario creado con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "La prioridad debe ser un numero entero!\n";
+                            }
+                    }
+
                 }
 
                 //Elimina un tipo de usuario de la lista de tipos de usuario
                 if (subSubOpcion == "2"){
+                    cout << "\nLista de Tipos de usuario:" << endl;
+                    sistema.printDescUsuarios();
                     cout << "\nIngrese la descripcion del tipo de usuario a eliminar: ";
                     getline(cin, descripcion);
                     cin.clear();
-                    sistema.removeListaTiposUsuario(descripcion);
-                    cout << "Tipo de usuario eliminado con exito!\n";
+                    if (sistema.encontrarElementoListaTiposUsuario(descripcion) == true){
+                        sistema.removeListaTiposUsuario(descripcion);
+                        cout << "Tipo de usuario eliminado con exito!\n";
+                    } else {
+                        cout << "No se encontro el usuario que selecciono, intente nuevamente!" << endl;
+                    }
                 } else if (subSubOpcion != "1" && subSubOpcion != "2"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
@@ -279,24 +302,36 @@ int main()
 
                 //Modifica la cantidad de ventanillas del area indicada
                 if (subSubOpcion == "2"){
+                    cout << "\nLista de Areas:" << endl;
+                    sistema.printDescCodArea();
                     cout << "\nIngrese el codigo del area a modificar: ";
                     getline(cin, codigo);
                     cin.clear();
-                    cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
-                    getline(cin, cantidad);
-                    cin.clear();
-                    sistema.modVentanillasArea(codigo, stoi(cantidad));
-                    cout << "Area modificada con exito!\n";
+                    if (sistema.encontrarElementoListaAreas(codigo) == true){
+                        cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
+                        getline(cin, cantidad);
+                        cin.clear();
+                        sistema.modVentanillasArea(codigo, stoi(cantidad));
+                        cout << "Area modificada con exito!\n";
+                    } else {
+                        cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                    }
                 }
 
                 //Elimina un area de la lista de areas
                 if (subSubOpcion == "3"){
                     //Se tiene que trabajar pensando en que cuando se elimina un area se eliminan sus servicios asociados
+                    cout << "\nLista de Areas:" << endl;
+                    sistema.printDescCodArea();
                     cout << "\nIngrese el codigo del area a eliminar: ";
                     getline(cin, codigo);
                     cin.clear();
-                    sistema.removeListaAreas(codigo);
-                    cout << "\nArea eliminada con exito!";
+                    if (sistema.encontrarElementoListaAreas(codigo) == true){
+                        sistema.removeListaAreas(codigo);
+                        cout << "\nArea eliminada con exito!";
+                    } else {
+                        cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                    }
                 } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
@@ -331,20 +366,41 @@ int main()
 
                 //Elimina un servicio de la lista de servicios
                 if (subSubOpcion == "2"){
-                    cout << "\nIngrese la descripcion del servicio a eliminar: ";
+                    cout << "\nLista de Servicios:" << endl;
+                    sistema.printDescServicios();
+                    cout << "Ingrese la descripcion del servicio a eliminar: ";
                     getline(cin, descripcion);
                     cin.clear();
-                    sistema.removeListaServicios(descripcion);
-                    cout << "Servicio eliminado con exito!\n";
+                    if (sistema.encontrarElementoListaServicios(codigo) == true){
+                        sistema.removeListaServicios(descripcion);
+                        cout << "Servicio eliminado con exito!\n";
+                    } else {
+                        cout << "No se encontro el servicio que selecciono, intente nuevamente!" << endl;
+                    }
                 }
 
                 //Reordena la lista de servicios
                 if (subSubOpcion == "3"){
-                    cout << endl;
+                    cout << "\nLista de Servicios:" << endl;
                     sistema.printDescServicios();
                     cout << "\nIngrese la posicion del servicio a reubicar en la lista: ";
                     getline(cin, temp1);
                     cin.clear();
+                    if (esNum(temp1) == true){
+                        if (stoi(temp1) < sistema.getSizeServicios()){
+                            cout << "\nIngrese la posicion destino: ";
+                            getline(cin, temp2);
+                            cin.clear();
+                            if (esNum(temp2) == true){
+                                if (stoi(temp2) < sistema.getSizeServicios()){
+                                sistema.reorderServicios(stoi(temp1), stoi(temp2));
+                                cout << "\nServicio reubicado con exito!";
+                                }
+                            }
+                        }
+                    } else {
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    }
                     cout << "\nIngrese la posicion destino: ";
                     getline(cin, temp2);
                     cin.clear();
