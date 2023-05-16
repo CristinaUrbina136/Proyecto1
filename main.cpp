@@ -218,6 +218,7 @@ int main()
             cin.clear();
 
             //TIPOS DE USUARIO
+            subSubOpcion = "1";
             while(subOpcion == "1" && subSubOpcion != "3"){
                 cout << "\nTIPOS DE USUARIO" << endl;
                 cout << "1. Agregar" << endl;
@@ -273,12 +274,13 @@ int main()
                             cout << "No se encontro el usuario que selecciono, intente nuevamente!" << endl;
                         }
                     }
-                } else if (subSubOpcion != "1" && subSubOpcion != "2"){
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
             //AREAS
+            subSubOpcion = "0";
             while(subOpcion == "2" && subSubOpcion != "4"){
                 cout << "\nAREAS" << endl;
                 cout << "1. Agregar" << endl;
@@ -338,14 +340,23 @@ int main()
                         getline(cin, codigo);
                         cin.clear();
                         if (sistema.encontrarElementoListaAreas(codigo) == true){
-                            cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
-                            getline(cin, cantidad);
-                            cin.clear();
+                            continuar = false;
+                        } else {
+                            cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                        }
+                    }
+
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
+                        getline(cin, cantidad);
+                        cin.clear();
+                        if (esNum(cantidad) == true){
                             sistema.modVentanillasArea(codigo, stoi(cantidad));
                             cout << "Area modificada con exito!\n";
                             continuar = false;
                         } else {
-                            cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                            cout << "La cantidad debe ser un numero entero!" << endl;
                         }
                     }
                 }
@@ -362,16 +373,18 @@ int main()
                         if (sistema.encontrarElementoListaAreas(codigo) == true){
                             sistema.removeListaAreas(codigo);
                             cout << "\nArea eliminada con exito!";
+                            continuar = false;
                         } else {
                             cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
                         }
                     }
-                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3" && subSubOpcion != "4"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
             //SERVICIOS
+            subSubOpcion = "0";
             while(subOpcion == "3" && subSubOpcion != "4"){
                 cout << "\nSERVICIOS" << endl;
                 cout << "1. Agregar" << endl;
@@ -455,7 +468,10 @@ int main()
                         if (esNum(temp1) == true){
                             if (stoi(temp1) < sistema.getSizeServicios()){
                                 continuar = false;
+                            } else {
+                                cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
                             }
+                        } else {
                             cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
                         }
                     }
@@ -470,11 +486,14 @@ int main()
                                 sistema.reorderServicios(stoi(temp1), stoi(temp2));
                                 cout << "\nServicio reubicado con exito!";
                                 continuar = false;
+                            } else {
+                                cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
                             }
+                        } else {
                             cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
                         }
                     }
-                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3" && subSubOpcion != "4"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
