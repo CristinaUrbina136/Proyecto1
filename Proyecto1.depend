@@ -329,14 +329,30 @@
 	<ostream>
 	"Areas.h"
 
+<<<<<<< HEAD
 1684267686 source:c:\users\usuario\desktop\proyecto0git\proyecto1\main.cpp
+=======
+<<<<<<< HEAD
+1684099965 source:c:\users\cristina\desktop\gitproyecto1\proyecto1\main.cpp
+=======
+1684126021 source:c:\users\usuario\desktop\proyecto0git\proyecto1\main.cpp
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
+>>>>>>> cfffc1f62f823c3552fe5933e1cb505b8a39c308
 	<iostream>
 	<stdexcept>
 	<iostream>
 	"Sistema.h"
 	"TiposUsuario.h"
 
+<<<<<<< HEAD
 1684264472 c:\users\usuario\desktop\proyecto0git\proyecto1\include\sistema.h
+=======
+<<<<<<< HEAD
+1684099965 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\sistema.h
+=======
+1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\sistema.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
+>>>>>>> cfffc1f62f823c3552fe5933e1cb505b8a39c308
 	<stdexcept>
 	<iostream>
 	<string>
@@ -345,15 +361,25 @@
 	"Servicios.h"
 	"Areas.h"
 
+<<<<<<< HEAD
+1684088369 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\tiposusuario.h
+=======
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\tiposusuario.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
 	<stdexcept>
 	<iostream>
 	<string>
 	<ostream>
 
+<<<<<<< HEAD
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\servicios.h
+
+1684098268 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\areas.h
+=======
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\servicios.h
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\areas.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
 	<stdexcept>
 	<iostream>
 	<string>
@@ -362,13 +388,29 @@
 	"DLinkedList.h"
 	"Ventanillas.h"
 
+<<<<<<< HEAD
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\heappriorityqueue.h
+=======
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\heappriorityqueue.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
 	<stdexcept>
 	<iostream>
 	"MinHeap.h"
 	"KVPair.h"
 	"PriorityQueue.h"
 
+<<<<<<< HEAD
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\minheap.h
+	<stdexcept>
+	<iostream>
+
+1684027610 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\kvpair.h
+	<iostream>
+
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\priorityqueue.h
+
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\dlinkedlist.h
+=======
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\minheap.h
 	<stdexcept>
 	<iostream>
@@ -378,17 +420,30 @@
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\priorityqueue.h
 
+<<<<<<< HEAD
 1684263902 c:\users\usuario\desktop\proyecto0git\proyecto1\include\dlinkedlist.h
+=======
+1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\dlinkedlist.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
+>>>>>>> cfffc1f62f823c3552fe5933e1cb505b8a39c308
 	<stdexcept>
 	<iostream>
 	"List.h"
 	"DNode.h"
 
+<<<<<<< HEAD
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\list.h
+
+1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\dnode.h
+
+1684095468 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\ventanillas.h
+=======
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\list.h
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\dnode.h
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\ventanillas.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
 	<stdexcept>
 	<iostream>
 	<string>
@@ -396,7 +451,11 @@
 	"DNode.h"
 	"Tiquetes.h"
 
+<<<<<<< HEAD
+1684095937 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\tiquetes.h
+=======
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\tiquetes.h
+>>>>>>> 8ce8d2ceef7d4a3a19987be5849e4f2c1565a557
 	<stdexcept>
 	<iostream>
 	<string>
