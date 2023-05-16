@@ -15,9 +15,10 @@ private:
     DNode<E> *head;
     DNode<E> *tail;
     DNode<E> *current;
-    int size;
 
 public:
+    int size;
+
     DLinkedList() {
         current = head = new DNode<E>(nullptr, nullptr);
         head->next = tail = new DNode<E>(nullptr, head);

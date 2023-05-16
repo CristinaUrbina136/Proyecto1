@@ -329,13 +329,14 @@
 	<ostream>
 	"Areas.h"
 
-1684126021 source:c:\users\usuario\desktop\proyecto0git\proyecto1\main.cpp
+1684267686 source:c:\users\usuario\desktop\proyecto0git\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
 	"Sistema.h"
+	"TiposUsuario.h"
 
-1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\sistema.h
+1684264472 c:\users\usuario\desktop\proyecto0git\proyecto1\include\sistema.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -377,7 +378,7 @@
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\priorityqueue.h
 
-1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\dlinkedlist.h
+1684263902 c:\users\usuario\desktop\proyecto0git\proyecto1\include\dlinkedlist.h
 	<stdexcept>
 	<iostream>
 	"List.h"

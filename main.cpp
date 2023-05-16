@@ -2,14 +2,31 @@
 #include<stdexcept>
 #include<iostream>
 #include "Sistema.h"
+#include "TiposUsuario.h"
 
 using namespace std;
 
+bool esNum(string num) {
+    //Si es un espacio vacio
+    if (num == ""){
+        return false;
+    }
+    //Recorre el string
+    for (int i = 0; num[i] != '\0'; i++) {
+        //Si el caracter no es un digito
+        if (!isdigit(num[i])) {
+            return false;
+        }
+        //Si el caracter no es un entero
+        if (num[i] == ',' || num [i] == '.') {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main()
 {
-    //Es un boceto del programa, se haran correciones menores y detalles cuando este terminado
-
-    //Para probar
 
     Sistema sistema;
 
@@ -55,6 +72,9 @@ int main()
     string descU;
     string descS;
 
+    //Para validar
+    bool continuar = true;
+
     //MENU
     while (opcion != "6"){
         cout << "\nMENU PRINCIPAL" << endl;
@@ -81,7 +101,12 @@ int main()
             cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
             getline(cin, temp1);
             cin.clear();
-
+            while (temp1 != "0" && temp1 != "1" && temp1 != "2"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
+                    getline(cin, temp1);
+                    cin.clear();
+            }
             cout << endl;
             cout << "Lista de ventanillas del area" << endl;
             sistema.verVentanillas(temp1);
@@ -95,7 +120,7 @@ int main()
         //SUBMENU TIQUETES
         while (opcion == "2" && subOpcion != "2"){
             cout << "\nSUBMENU TIQUETES" << endl;
-            cout << "1. Seleccionar tipo de tiquete y servicio" << endl;
+            cout << "1. Seleccionar tipo de usuario y servicio" << endl;
             cout << "2. Regresar" << endl;
             cout << "Opcion seleccionada: ";
             getline(cin, subOpcion);
@@ -107,11 +132,21 @@ int main()
                 cout << "\nIngrese su tipo de usuario: ";
                 getline(cin, temp1);
                 cin.clear();
-                while (temp1 != "0" && temp1 != "1" && temp1 != "2" && temp1 != "3"){
-                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
-                    cout << "\nIngrese su tipo de usuario: ";
-                    getline(cin, temp1);
-                    cin.clear();
+                continuar = true;
+                while (continuar == true){
+                    if (esNum(temp1) == false){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                        cout << "\nIngrese su tipo de usuario: ";
+                        getline(cin, temp1);
+                        cin.clear();
+                    } else if (stoi(temp1) > sistema.getSizeTiposUsuario()-1){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                        cout << "\nIngrese su tipo de usuario: ";
+                        getline(cin, temp1);
+                        cin.clear();
+                    } else {
+                        continuar = false;
+                    }
                 }
 
                 cout << "\nLista de tipos de servicios" << endl;
@@ -119,11 +154,21 @@ int main()
                 cout << "\nIngrese el servicio al que desea acceder: ";
                 getline(cin, temp2);
                 cin.clear();
-                while (temp2 != "0" && temp2 != "1" && temp2 != "2" && temp2 != "3"){
-                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
-                    cout << "\nIngrese el servicio al que desea acceder: ";
-                    getline(cin, temp2);
-                    cin.clear();
+                continuar = true;
+                while (continuar == true){
+                    if (esNum(temp2) == false){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                        cout << "\nIngrese el servicio al que desea acceder: ";
+                        getline(cin, temp2);
+                        cin.clear();
+                    } else if (stoi(temp2) > sistema.getSizeServicios()-1){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                        cout << "\nIngrese el servicio al que desea acceder: ";
+                        getline(cin, temp2);
+                        cin.clear();
+                    } else {
+                        continuar = false;
+                    }
                 }
 
                 //Obtiene el codigo de area del servicio, a partir del numero (posicion en lista) seleccionado por el usuario
@@ -154,6 +199,7 @@ int main()
                 //Suma al contador de tiquetes global
                 tiquetesGlobal++;
                 cout << "Tiquete generado con exito!" << endl;
+                continuar == true;
             } else if (subOpcion != "1" && subOpcion != "2"){
                 cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
             }
@@ -190,6 +236,7 @@ int main()
                     getline(cin, prioridad);
                     cin.clear();
                     sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
+                    cout << "Tipo de usuario creado con exito!\n";
                 }
 
                 //Elimina un tipo de usuario de la lista de tipos de usuario
@@ -198,6 +245,9 @@ int main()
                     getline(cin, descripcion);
                     cin.clear();
                     sistema.removeListaTiposUsuario(descripcion);
+                    cout << "Tipo de usuario eliminado con exito!\n";
+                } else if (subSubOpcion != "1" && subSubOpcion != "2"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
@@ -224,6 +274,7 @@ int main()
                     getline(cin, cantidad);
                     cin.clear();
                     sistema.appendListaAreas(descripcion, codigo, stoi(cantidad));
+                    cout << "Area creada con exito!\n";
                 }
 
                 //Modifica la cantidad de ventanillas del area indicada
@@ -235,6 +286,7 @@ int main()
                     getline(cin, cantidad);
                     cin.clear();
                     sistema.modVentanillasArea(codigo, stoi(cantidad));
+                    cout << "Area modificada con exito!\n";
                 }
 
                 //Elimina un area de la lista de areas
@@ -244,6 +296,9 @@ int main()
                     getline(cin, codigo);
                     cin.clear();
                     sistema.removeListaAreas(codigo);
+                    cout << "\nArea eliminada con exito!";
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
@@ -271,6 +326,7 @@ int main()
                     getline(cin, codigo);
                     cin.clear();
                     sistema.appendListaServicios(descripcion, stoi(prioridad), codigo);
+                    cout << "Servicio agregado con exito!\n";
                 }
 
                 //Elimina un servicio de la lista de servicios
@@ -279,6 +335,7 @@ int main()
                     getline(cin, descripcion);
                     cin.clear();
                     sistema.removeListaServicios(descripcion);
+                    cout << "Servicio eliminado con exito!\n";
                 }
 
                 //Reordena la lista de servicios
@@ -292,13 +349,19 @@ int main()
                     getline(cin, temp2);
                     cin.clear();
                     sistema.reorderServicios(stoi(temp1), stoi(temp2));
+                    cout << "\nServicio reubicado con exito!";
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
             //LIMPIAR COLAS Y ESTADISTICAS
             if(subOpcion == "4"){
                 sistema.limpiarEstadisticas();
-            }
+                cout << "Las colas y estadisticas han sido limpiadas con exito! \n" << endl;
+            } else if (subOpcion != "1" && subOpcion != "2" && subOpcion != "3" && subOpcion != "4" && subOpcion != "5"){
+                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                }
         }
 
         //SUBMENU ESTADISTICAS DEL SISTEMA

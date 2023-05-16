@@ -415,7 +415,17 @@ public:
         }
 
     }
+    int getSizeTiposUsuario(){
+        return listaTiposUsuario.size;
+    }
 
+    int getSizeAreas(){
+        return listaAreas.size;
+    }
+
+    int getSizeServicios(){
+        return listaServicios.size;
+    }
 
 };
 
