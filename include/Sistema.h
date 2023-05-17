@@ -216,7 +216,7 @@ public:
             Areas *tempArea = listaAreas.getElement();
             cout << tempArea->descripcion << " con el codigo " << tempArea->codigo << " posee las siguientes ventanillas " << endl;
             tempArea->verVentanillas();
-            cout << tempArea->descripcion << " con el codigo " << tempArea->codigo << " posee tiene la siguiente cola de tiquetes " << endl;
+            cout << tempArea->descripcion << " con el codigo " << tempArea->codigo << " posee la siguiente cola de tiquetes " << endl;
             tempArea->verCola();
             listaAreas.next();
             cout << endl;
@@ -415,6 +415,7 @@ public:
         }
 
     }
+    //Obtiene el tamaño de las listas
     int getSizeTiposUsuario(){
         return listaTiposUsuario.size;
     }
@@ -425,6 +426,55 @@ public:
 
     int getSizeServicios(){
         return listaServicios.size;
+    }
+
+    // Encuentra un elemento en la lista correspondiente
+    int encontrarElementoListaTiposUsuario(string descripcion){
+        listaTiposUsuario.goToStart();
+        while (!listaTiposUsuario.atEnd()){
+            TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
+            if(tempUsuario->descripcion == descripcion){
+                return true;
+            }
+            listaTiposUsuario.next();
+        }
+        return false;
+    }
+
+    int encontrarElementoListaAreas(string codigo){
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            if(tempArea->codigo == codigo){
+                return true;
+            }
+            listaAreas.next();
+        }
+        return false;
+    }
+
+    int encontrarElementoListaServicios(string descripcion){
+        listaServicios.goToStart();
+        while (!listaServicios.atEnd()){
+            Servicios *tempServicio = listaServicios.getElement();
+            if(tempServicio->descripcion == descripcion){
+                return true;
+            }
+            listaServicios.next();
+        }
+        return false;
+    }
+
+    //Imprime las ventanillas
+    void printVentanillas(){
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            cout << endl;
+            Areas *tempArea = listaAreas.getElement();
+            tempArea->verVentanillas();
+            cout << tempArea->descripcion << " con el codigo " << tempArea->codigo << endl;
+            listaAreas.next();
+        }
     }
 
 };

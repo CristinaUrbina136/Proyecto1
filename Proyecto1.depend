@@ -331,15 +331,24 @@
 
 1684115137 D
 
+<<<<<<< HEAD
 1684126021 source:c:\users\usuario\desktop\proyecto0git\proyecto1\main.cpp
 
 1684268305 source:c:\users\cristina\desktop\gitproyecto1\proyecto1\main.cpp
+=======
+1684283028 source:c:\users\usuario\desktop\proyecto0git\proyecto1\main.cpp
+>>>>>>> 60e14480995ccd59d04e929a812e0434b6f3dfb3
 	<iostream>
 	<stdexcept>
 	<iostream>
 	"Sistema.h"
 	"TiposUsuario.h"
 
+<<<<<<< HEAD
+=======
+1684099965 source:c:\users\cristina\desktop\gitproyecto1\proyecto1\main.cpp
+
+>>>>>>> 60e14480995ccd59d04e929a812e0434b6f3dfb3
 1684115137 8d2ceef7d4a3a19987be5849e4f2c1565a557
 	<stdexcept>
 	<iostream>
@@ -388,9 +397,13 @@
 	"List.h"
 	"DNode.h"
 
+<<<<<<< HEAD
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\sistema.h
 
 1684268305 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\sistema.h
+=======
+1684282375 c:\users\usuario\desktop\proyecto0git\proyecto1\include\sistema.h
+>>>>>>> 60e14480995ccd59d04e929a812e0434b6f3dfb3
 	<stdexcept>
 	<iostream>
 	<string>
@@ -399,10 +412,19 @@
 	"Servicios.h"
 	"Areas.h"
 
+<<<<<<< HEAD
 1684088369 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\tiposusuario.h
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\tiposusuario.h
 
+=======
+1684099965 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\sistema.h
+
+1684088369 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\tiposusuario.h
+
+1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\tiposusuario.h
+
+>>>>>>> 60e14480995ccd59d04e929a812e0434b6f3dfb3
 1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\servicios.h
 
 1684098268 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\areas.h

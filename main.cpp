@@ -95,26 +95,36 @@ int main()
 
         //SUBMENU ATENDER
         if (opcion == "3"){
-            cout << endl;
-            cout << "Lista de areas" << endl;
-            sistema.printDescCodArea();
-            cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
-            getline(cin, temp1);
-            cin.clear();
-            while (temp1 != "0" && temp1 != "1" && temp1 != "2"){
-                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
-                    cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
-                    getline(cin, temp1);
-                    cin.clear();
+            continuar = true;
+            while (continuar == true){
+                cout << "\nLista de areas" << endl;
+                sistema.printDescCodArea();
+                cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
+                getline(cin, temp1);
+                cin.clear();
+                if (sistema.encontrarElementoListaAreas(temp1) == true){
+                    continuar = false;
+                } else {
+                    cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                }
             }
-            cout << endl;
-            cout << "Lista de ventanillas del area" << endl;
-            sistema.verVentanillas(temp1);
-            cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
-            getline(cin, temp2);
-            cin.clear();
-
-            sistema.atender(temp1, temp2);
+            continuar = true;
+            while (continuar == true){
+                cout << "Lista de ventanillas del area" << endl;
+                sistema.printVentanillas();
+                cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
+                getline(cin, temp2);
+                cin.clear();
+                if (esNum(temp2) == false){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    } else if (stoi(temp2) > sistema.getSizeAreas() || temp2 == "0"){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    } else {
+                        sistema.atender(temp1, temp2);
+                        cout << "El tiquete se atendio con exito!" << endl;
+                        continuar = false;
+                    }
+            }
         }
 
         //SUBMENU TIQUETES
@@ -210,7 +220,7 @@ int main()
             cout << "\nSUBMENU ADMINISTRACION" << endl;
             cout << "1. Tipos de usuario" << endl;
             cout << "2. Areas" << endl;
-            cout << "3. Servicios disponibles" << endl;
+            cout << "3. Servicios" << endl;
             cout << "4. Limpiar colas y estadisticas" << endl;
             cout << "5. Regresar" << endl;
             cout << "Opcion seleccionada: ";
@@ -218,6 +228,7 @@ int main()
             cin.clear();
 
             //TIPOS DE USUARIO
+            subSubOpcion = "1";
             while(subOpcion == "1" && subSubOpcion != "3"){
                 cout << "\nTIPOS DE USUARIO" << endl;
                 cout << "1. Agregar" << endl;
@@ -229,29 +240,57 @@ int main()
 
                 //Agrega un tipo de usuario a la lista de tipos de usuario
                 if (subSubOpcion == "1"){
-                    cout << "\nIngrese la descripcion del tipo de usuario a agregar: ";
-                    getline(cin, descripcion);
-                    cin.clear();
-                    cout << "\nIngrese la prioridad del tipo de usuario a agregar: ";
-                    getline(cin, prioridad);
-                    cin.clear();
-                    sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
-                    cout << "Tipo de usuario creado con exito!\n";
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la descripcion del tipo de usuario a agregar: ";
+                        getline(cin, descripcion);
+                        cin.clear();
+                        if (descripcion == ""){
+                            cout << "Debe ingresar una descripcion valida!" << endl;
+                        } else {
+                            continuar = false;
+                        }
+                    }
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la prioridad del tipo de usuario a agregar: ";
+                        getline(cin, prioridad);
+                        cin.clear();
+                        if (esNum(prioridad) == true){
+                            sistema.appendListaTiposUsuario(descripcion, stoi(prioridad));
+                            cout << "Tipo de usuario creado con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "La prioridad debe ser un numero entero!\n";
+                            }
+                    }
+
                 }
 
                 //Elimina un tipo de usuario de la lista de tipos de usuario
                 if (subSubOpcion == "2"){
-                    cout << "\nIngrese la descripcion del tipo de usuario a eliminar: ";
-                    getline(cin, descripcion);
-                    cin.clear();
-                    sistema.removeListaTiposUsuario(descripcion);
-                    cout << "Tipo de usuario eliminado con exito!\n";
-                } else if (subSubOpcion != "1" && subSubOpcion != "2"){
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nLista de Tipos de usuario:" << endl;
+                        sistema.printDescUsuarios();
+                        cout << "\nIngrese la descripcion del tipo de usuario a eliminar: ";
+                        getline(cin, descripcion);
+                        cin.clear();
+                        if (sistema.encontrarElementoListaTiposUsuario(descripcion) == true){
+                            sistema.removeListaTiposUsuario(descripcion);
+                            cout << "Tipo de usuario eliminado con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "No se encontro el usuario que selecciono, intente nuevamente!" << endl;
+                        }
+                    }
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
             //AREAS
+            subSubOpcion = "0";
             while(subOpcion == "2" && subSubOpcion != "4"){
                 cout << "\nAREAS" << endl;
                 cout << "1. Agregar" << endl;
@@ -264,45 +303,98 @@ int main()
 
                 //Agrega un area a la lista de areas
                 if (subSubOpcion == "1"){
-                    cout << "\nIngrese la descripcion del area a agregar: ";
-                    getline(cin, descripcion);
-                    cin.clear();
-                    cout << "\nIngrese el codigo del area a agregar: ";
-                    getline(cin, codigo);
-                    cin.clear();
-                    cout << "\nIngrese la cantidad de ventanillas del area a agregar: ";
-                    getline(cin, cantidad);
-                    cin.clear();
-                    sistema.appendListaAreas(descripcion, codigo, stoi(cantidad));
-                    cout << "Area creada con exito!\n";
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la descripcion del area a agregar: ";
+                        getline(cin, descripcion);
+                        cin.clear();
+                        if (descripcion == ""){
+                            cout << "Debe ingresar una descripcion valida!" << endl;
+                        } else {
+                            continuar = false;
+                        }
+                    }
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese el codigo del area a agregar: ";
+                        getline(cin, codigo);
+                        cin.clear();
+                        if (codigo == ""){
+                            cout << "Debe ingresar un codigo valido!" << endl;
+                        } else {
+                            continuar = false;
+                        }
+                    }
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la cantidad de ventanillas del area a agregar: ";
+                        getline(cin, cantidad);
+                        cin.clear();
+                        if (esNum(cantidad) == true){
+                            sistema.appendListaAreas(descripcion, codigo, stoi(cantidad));
+                            cout << "Area creada con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "La cantidad debe ser un numero entero!\n";
+                        }
+                    }
                 }
 
                 //Modifica la cantidad de ventanillas del area indicada
                 if (subSubOpcion == "2"){
-                    cout << "\nIngrese el codigo del area a modificar: ";
-                    getline(cin, codigo);
-                    cin.clear();
-                    cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
-                    getline(cin, cantidad);
-                    cin.clear();
-                    sistema.modVentanillasArea(codigo, stoi(cantidad));
-                    cout << "Area modificada con exito!\n";
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nLista de Areas:" << endl;
+                        sistema.printDescCodArea();
+                        cout << "\nIngrese el codigo del area a modificar: ";
+                        getline(cin, codigo);
+                        cin.clear();
+                        if (sistema.encontrarElementoListaAreas(codigo) == true){
+                            continuar = false;
+                        } else {
+                            cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                        }
+                    }
+
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la nueva cantidad de ventanillas del area: ";
+                        getline(cin, cantidad);
+                        cin.clear();
+                        if (esNum(cantidad) == true){
+                            sistema.modVentanillasArea(codigo, stoi(cantidad));
+                            cout << "Area modificada con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "La cantidad debe ser un numero entero!" << endl;
+                        }
+                    }
                 }
 
                 //Elimina un area de la lista de areas
                 if (subSubOpcion == "3"){
-                    //Se tiene que trabajar pensando en que cuando se elimina un area se eliminan sus servicios asociados
-                    cout << "\nIngrese el codigo del area a eliminar: ";
-                    getline(cin, codigo);
-                    cin.clear();
-                    sistema.removeListaAreas(codigo);
-                    cout << "\nArea eliminada con exito!";
-                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nLista de Areas:" << endl;
+                        sistema.printDescCodArea();
+                        cout << "\nIngrese el codigo del area a eliminar: ";
+                        getline(cin, codigo);
+                        cin.clear();
+                        if (sistema.encontrarElementoListaAreas(codigo) == true){
+                            sistema.removeListaAreas(codigo);
+                            cout << "\nArea eliminada con exito!";
+                            continuar = false;
+                        } else {
+                            cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                        }
+                    }
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3" && subSubOpcion != "4"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
 
             //SERVICIOS
+            subSubOpcion = "0";
             while(subOpcion == "3" && subSubOpcion != "4"){
                 cout << "\nSERVICIOS" << endl;
                 cout << "1. Agregar" << endl;
@@ -315,42 +407,103 @@ int main()
 
                 //Agrega un servicio a la lista de servicios
                 if (subSubOpcion == "1"){
-                    //se tiene que trabajar pensando en que no se puede asignar un area que no existe a un servicio
-                    cout << "\nIngrese la descripcion del servicio a agregar: ";
-                    getline(cin, descripcion);
-                    cin.clear();
-                    cout << "\nIngrese la prioridad del servicio a agregar: ";
-                    getline(cin, prioridad);
-                    cin.clear();
-                    cout << "\nIngrese el codigo del area del servicio a agregar: ";
-                    getline(cin, codigo);
-                    cin.clear();
-                    sistema.appendListaServicios(descripcion, stoi(prioridad), codigo);
-                    cout << "Servicio agregado con exito!\n";
+                    continuar = true;
+                    while (continuar == true){
+                        //se tiene que trabajar pensando en que no se puede asignar un area que no existe a un servicio
+                        cout << "\nIngrese la descripcion del servicio a agregar: ";
+                        getline(cin, descripcion);
+                        cin.clear();
+                        if (descripcion == ""){
+                            cout << "Debe ingresar una descripcion valida!" << endl;
+                        } else {
+                            continuar = false;
+                        }
+                    }
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la prioridad del servicio a agregar: ";
+                        getline(cin, prioridad);
+                        cin.clear();
+                        if (esNum(prioridad) == true){
+                            continuar = false;
+                        } else {
+                            cout << "La prioridad debe ser un numero entero!\n";
+                        }
+                    }
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nLista de Areas:" << endl;
+                        sistema.printDescCodArea();
+                        cout << "\nIngrese el codigo del area del servicio a agregar: ";
+                        getline(cin, codigo);
+                        cin.clear();
+                        if (sistema.encontrarElementoListaAreas(codigo) == true){
+                            sistema.appendListaServicios(descripcion, stoi(prioridad), codigo);
+                            cout << "Servicio agregado con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                        }
+                    }
                 }
 
                 //Elimina un servicio de la lista de servicios
                 if (subSubOpcion == "2"){
-                    cout << "\nIngrese la descripcion del servicio a eliminar: ";
-                    getline(cin, descripcion);
-                    cin.clear();
-                    sistema.removeListaServicios(descripcion);
-                    cout << "Servicio eliminado con exito!\n";
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nLista de Servicios:" << endl;
+                        sistema.printDescServicios();
+                        cout << "Ingrese la descripcion del servicio a eliminar: ";
+                        getline(cin, descripcion);
+                        cin.clear();
+                        if (sistema.encontrarElementoListaServicios(descripcion) == true){
+                            sistema.removeListaServicios(descripcion);
+                            cout << "Servicio eliminado con exito!\n";
+                            continuar = false;
+                        } else {
+                            cout << "No se encontro el servicio que selecciono, intente nuevamente!" << endl;
+                        }
+                    }
                 }
 
                 //Reordena la lista de servicios
                 if (subSubOpcion == "3"){
-                    cout << endl;
-                    sistema.printDescServicios();
-                    cout << "\nIngrese la posicion del servicio a reubicar en la lista: ";
-                    getline(cin, temp1);
-                    cin.clear();
-                    cout << "\nIngrese la posicion destino: ";
-                    getline(cin, temp2);
-                    cin.clear();
-                    sistema.reorderServicios(stoi(temp1), stoi(temp2));
-                    cout << "\nServicio reubicado con exito!";
-                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3"){
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nLista de Servicios:" << endl;
+                        sistema.printDescServicios();
+                        cout << "\nIngrese la posicion del servicio a reubicar en la lista: ";
+                        getline(cin, temp1);
+                        cin.clear();
+                        if (esNum(temp1) == true){
+                            if (stoi(temp1) < sistema.getSizeServicios()){
+                                continuar = false;
+                            } else {
+                                cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
+                            }
+                        } else {
+                            cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
+                        }
+                    }
+
+                    continuar = true;
+                    while (continuar == true){
+                        cout << "\nIngrese la posicion destino: ";
+                        getline(cin, temp2);
+                        cin.clear();
+                        if (esNum(temp2) == true){
+                            if (stoi(temp2) < sistema.getSizeServicios()){
+                                sistema.reorderServicios(stoi(temp1), stoi(temp2));
+                                cout << "\nServicio reubicado con exito!";
+                                continuar = false;
+                            } else {
+                                cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
+                            }
+                        } else {
+                            cout << "Posicion invalida! Debe elegir una de las posiciones presentadas anteriormente!" << endl;
+                        }
+                    }
+                } else if (subSubOpcion != "1" && subSubOpcion != "2" && subSubOpcion != "3" && subSubOpcion != "4"){
                     cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                 }
             }
