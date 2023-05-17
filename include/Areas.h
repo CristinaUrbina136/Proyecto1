@@ -11,7 +11,9 @@
 
 using namespace std;
 
-//Esta clase representa al objeto Area
+//Esta clase representa al objeto Area y posee sus atributos y metodos.
+//Fue trabajada por Cristina Urbina y Gabriel Calvo.
+
 class Areas
 {
 public:

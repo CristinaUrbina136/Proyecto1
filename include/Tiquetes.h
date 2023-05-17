@@ -10,7 +10,9 @@
 
 using namespace std;
 
-//Esta clase representa al objeto Tiquete
+//Esta clase representa al objeto Tiquete y posee sus atributos y metodos.
+//Fue trabajada por Andres Canossa y Cristina Urbina.
+
 class Tiquetes
 {
 public:

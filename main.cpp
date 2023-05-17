@@ -3,8 +3,12 @@
 #include<iostream>
 #include "Sistema.h"
 #include "TiposUsuario.h"
+#include"Areas.h"
 
 using namespace std;
+
+//Es donde se encuentra el programa principal que ejecuta el menu y sus diferentes opciones.
+//Fue trabajada por Gabriel Calvo y Cristina Urbina.
 
 bool esNum(string num) {
     //Si es un espacio vacio
@@ -25,6 +29,8 @@ bool esNum(string num) {
     return true;
 }
 
+int cantVentanillas = 0;
+
 int main()
 {
 
@@ -43,7 +49,6 @@ int main()
     sistema.appendListaServicios("Cambiar boleto", 1, "I");
     sistema.appendListaServicios("Solicitar informacion", 1, "I");
     sistema.appendListaServicios("Realizar un reclamo", 2, "S");
-
 
 
     //Contador global de tiquetes
@@ -120,9 +125,13 @@ int main()
                     } else if (stoi(temp2) > sistema.getSizeAreas() || temp2 == "0"){
                         cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
                     } else {
-                        sistema.atender(temp1, temp2);
-                        cout << "El tiquete se atendio con exito!" << endl;
-                        continuar = false;
+                        try {
+                            sistema.atender(temp1, temp2);
+                            cout << "El tiquete se atendio con exito!" << endl;
+                        } catch (runtime_error &e) {
+                            cout << "\nNo se ha podido realizar la operacion, la cola esta vacia" << endl;
+                        }
+                    continuar = false;
                     }
             }
         }

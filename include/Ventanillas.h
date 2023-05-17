@@ -10,7 +10,9 @@
 
 using namespace std;
 
-//Esta clase representa al objeto Ventanilla
+//Esta clase representa al objeto Ventanilla y posee sus atributos y metodos.
+//Fue trabajada por Andres Canossa y Cristina Urbina.
+
 class Ventanillas {
 public:
     string codigoVentanilla;

@@ -2,6 +2,9 @@
 #define SERVICIOS_H
 
 
+//Esta clase representa los servicios y posee sus atributos y metodos
+//Fue trabajada por Andres Canossa y Cristina Urbina.
+
 class Servicios
 {
 public:

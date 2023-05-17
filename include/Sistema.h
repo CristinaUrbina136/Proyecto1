@@ -11,6 +11,9 @@
 
 using namespace std;
 
+//Esta clase representa el sistema que es donde se unen todas las funcionalidades de las otras clases para hacer que funcione el programa principal.
+//Fue trabajada por Gabriel Calvo, Cristina Urbina y Andres Canossa.
+
 class Sistema
 {
 public:
@@ -463,18 +466,6 @@ public:
             listaServicios.next();
         }
         return false;
-    }
-
-    //Imprime las ventanillas
-    void printVentanillas(){
-        listaAreas.goToStart();
-        while (!listaAreas.atEnd()){
-            cout << endl;
-            Areas *tempArea = listaAreas.getElement();
-            tempArea->verVentanillas();
-            cout << tempArea->descripcion << " con el codigo " << tempArea->codigo << endl;
-            listaAreas.next();
-        }
     }
 
 };

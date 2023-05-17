@@ -8,6 +8,9 @@
 
 using namespace std;
 
+//Esta clase representa los tipos de usuario y posee sus atributos y metodos.
+//Fue trabajada por Gabriel Calvo, Cristina Urbina.
+
 class TiposUsuario
 {
 public:
