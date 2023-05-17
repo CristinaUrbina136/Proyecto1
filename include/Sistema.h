@@ -465,6 +465,18 @@ public:
         return false;
     }
 
+    //Imprime las ventanillas
+    void printVentanillas(){
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            cout << endl;
+            Areas *tempArea = listaAreas.getElement();
+            tempArea->verVentanillas();
+            cout << tempArea->descripcion << " con el codigo " << tempArea->codigo << endl;
+            listaAreas.next();
+        }
+    }
+
 };
 
 #endif // SISTEMA_H

@@ -95,26 +95,36 @@ int main()
 
         //SUBMENU ATENDER
         if (opcion == "3"){
-            cout << endl;
-            cout << "Lista de areas" << endl;
-            sistema.printDescCodArea();
-            cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
-            getline(cin, temp1);
-            cin.clear();
-            while (temp1 != "0" && temp1 != "1" && temp1 != "2"){
-                    cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
-                    cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
-                    getline(cin, temp1);
-                    cin.clear();
+            continuar = true;
+            while (continuar == true){
+                cout << "\nLista de areas" << endl;
+                sistema.printDescCodArea();
+                cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
+                getline(cin, temp1);
+                cin.clear();
+                if (sistema.encontrarElementoListaAreas(temp1) == true){
+                    continuar = false;
+                } else {
+                    cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                }
             }
-            cout << endl;
-            cout << "Lista de ventanillas del area" << endl;
-            sistema.verVentanillas(temp1);
-            cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
-            getline(cin, temp2);
-            cin.clear();
-
-            sistema.atender(temp1, temp2);
+            continuar = true;
+            while (continuar == true){
+                cout << "Lista de ventanillas del area" << endl;
+                sistema.printVentanillas();
+                cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
+                getline(cin, temp2);
+                cin.clear();
+                if (esNum(temp2) == false){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    } else if (stoi(temp2) > sistema.getSizeAreas() || temp2 == "0"){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    } else {
+                        sistema.atender(temp1, temp2);
+                        cout << "El tiquete se atendio con exito!" << endl;
+                        continuar = false;
+                    }
+            }
         }
 
         //SUBMENU TIQUETES
