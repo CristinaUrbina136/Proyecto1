@@ -40,7 +40,7 @@ public:
     }
 
     void verTiquete(){
-        cout << "Tiquete (Codigo" << codigoTiquete << ", Fecha solicitado " << fechaSolicitado << ", Prioridad " << to_string(prioridadFinal) << ")" << endl;
+        cout << "Tiquete (Codigo " << codigoTiquete << ", Fecha solicitado " << fechaSolicitado << ", Prioridad " << to_string(prioridadFinal) << ")" << endl;
     }
 
 
@@ -49,7 +49,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Tiquetes &t) {
-    os << "TIQUETE (" << t.codigoTiquete << ", " << t.fechaSolicitado << ", " << t.prioridadFinal << ")";
+    os << "Tiquete (Codigo " << t.codigoTiquete << ", Fecha solicitado " << t.fechaSolicitado << ", Prioridad " << t.prioridadFinal << ")";
     return os;
 }
 
