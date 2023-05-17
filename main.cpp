@@ -110,7 +110,7 @@ int main()
             }
             continuar = true;
             while (continuar == true){
-                cout << "Lista de ventanillas del area" << endl;
+                cout << "\nLista de ventanillas del area" << endl;
                 sistema.verVentanillas(temp1);
                 cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
                 getline(cin, temp2);
