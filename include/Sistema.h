@@ -50,6 +50,7 @@ public:
 
     //Eliminar un tipo de usuario de la lista de tipos de usuario
     void removeListaTiposUsuario(string descripcion){
+        //Elimina un tipo de usuario de la lista de tipos de usuario
         listaTiposUsuario.goToStart();
         while (!listaTiposUsuario.atEnd()){
             TiposUsuario *tempUsuario = listaTiposUsuario.getElement();
@@ -58,11 +59,18 @@ public:
             }
             listaTiposUsuario.next();
         }
+        //Elimina la cola de todas las areas para evitar inconsistencias
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            tempArea->colaTiquetes.clear();
+            listaAreas.next();
+        }
     }
 
     //Eliminar un area de la lista de areas
     void removeListaAreas(string codigo){
-        //Elimina el area de la lista de areas
+        //Elimina un area de la lista de areas
         listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();
@@ -84,6 +92,7 @@ public:
 
     //Eliminar un servicio de la lista de servicios
     void removeListaServicios(string descripcion){
+        //Elimina un servicio de la lista de servicios
         listaServicios.goToStart();
         while (!listaServicios.atEnd()){
             Servicios *tempServicio = listaServicios.getElement();
@@ -91,6 +100,13 @@ public:
                 listaServicios.remove();
             }
             listaServicios.next();
+        }
+        //Elimina la cola de todas las areas para evitar inconsistencias
+        listaAreas.goToStart();
+        while (!listaAreas.atEnd()){
+            Areas *tempArea = listaAreas.getElement();
+            tempArea->colaTiquetes.clear();
+            listaAreas.next();
         }
     }
 
