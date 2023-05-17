@@ -289,7 +289,7 @@ public:
                     //Si la ventanilla coincide en el codigo de area y numero
                     if(tempVentanilla->codigoVentanilla == codigo + numVentanilla){
                         //Le asigna el tiquete que ha sido sacado de la cola
-                        tempVentanilla->ultimoTiquete = "En ventanilla el tiquete codigo " + tempTiquete->codigoTiquete;
+                        tempVentanilla->ultimoTiquete = "En ventanilla Tiquete (Codigo " + tempTiquete->codigoTiquete + ", Fecha solicitado " + tempTiquete->fechaSolicitado + ", Prioridad " + to_string(tempTiquete->prioridadFinal) + ")";
                         //Agrega el tiquete a las estadistica
                         tempVentanilla->agregarTiqueteAtendido();
                     }
