@@ -339,7 +339,7 @@
 	"TiposUsuario.h"
 	"Areas.h"
 
-1684347487 source:c:\users\cristina\desktop\gitproyecto1\proyecto1\main.cpp
+1684351105 source:c:\users\cristina\desktop\gitproyecto1\proyecto1\main.cpp
 	<iostream>
 	<stdexcept>
 	<iostream>
@@ -418,7 +418,7 @@
 	"Servicios.h"
 	"Areas.h"
 
-1684347487 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\sistema.h
+1684352310 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\sistema.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -437,7 +437,7 @@
 
 1684348148 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\servicios.h
 
-1684348142 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\areas.h
+1684351589 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\areas.h
 	<stdexcept>
 	<iostream>
 	<string>
@@ -457,7 +457,12 @@
 	"DLinkedList.h"
 	"Ventanillas.h"
 
-1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\heappriorityqueue.h
+1684351505 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\heappriorityqueue.h
+	<stdexcept>
+	<iostream>
+	"MinHeap.h"
+	"KVPair.h"
+	"PriorityQueue.h"
 
 1684115137 c:\users\usuario\desktop\proyecto0git\proyecto1\include\heappriorityqueue.h
 
@@ -495,7 +500,7 @@
 
 1684026469 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\dnode.h
 
-1684348177 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\ventanillas.h
+1684352371 c:\users\cristina\desktop\gitproyecto1\proyecto1\include\ventanillas.h
 	<stdexcept>
 	<iostream>
 	<string>

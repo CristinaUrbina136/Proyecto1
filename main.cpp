@@ -98,44 +98,6 @@ int main()
             sistema.printEstadoColas();
         }
 
-        //SUBMENU ATENDER
-        if (opcion == "3"){
-            continuar = true;
-            while (continuar == true){
-                cout << "\nLista de areas" << endl;
-                sistema.printDescCodArea();
-                cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
-                getline(cin, temp1);
-                cin.clear();
-                if (sistema.encontrarElementoListaAreas(temp1) == true){
-                    continuar = false;
-                } else {
-                    cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
-                }
-            }
-            continuar = true;
-            while (continuar == true){
-                cout << "\nLista de ventanillas del area" << endl;
-                sistema.verVentanillas(temp1);
-                cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
-                getline(cin, temp2);
-                cin.clear();
-                if (esNum(temp2) == false){
-                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
-                    } else if (stoi(temp2) > sistema.getSizeAreas() || temp2 == "0"){
-                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
-                    } else {
-                        try {
-                            sistema.atender(temp1, temp2);
-                            cout << "El tiquete se atendio con exito!" << endl;
-                        } catch (runtime_error &e) {
-                            cout << "\nNo se ha podido realizar la operacion, la cola esta vacia" << endl;
-                        }
-                    continuar = false;
-                    }
-            }
-        }
-
         //SUBMENU TIQUETES
         while (opcion == "2" && subOpcion != "2"){
             cout << "\nSUBMENU TIQUETES" << endl;
@@ -221,6 +183,44 @@ int main()
                 continuar == true;
             } else if (subOpcion != "1" && subOpcion != "2"){
                 cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+            }
+        }
+
+        //SUBMENU ATENDER
+        if (opcion == "3"){
+            continuar = true;
+            while (continuar == true){
+                cout << "\nLista de areas" << endl;
+                sistema.printDescCodArea();
+                cout << "\nIndique el codigo del area en el que desea atender un tiquete: ";
+                getline(cin, temp1);
+                cin.clear();
+                if (sistema.encontrarElementoListaAreas(temp1) == true){
+                    continuar = false;
+                } else {
+                    cout << "No se encontro el area que selecciono, intente nuevamente!" << endl;
+                }
+            }
+            continuar = true;
+            while (continuar == true){
+                cout << "\nLista de ventanillas del area" << endl;
+                sistema.verVentanillas(temp1);
+                cout << "\nIndique el numero de ventanilla en el que desea atender un tiquete: ";
+                getline(cin, temp2);
+                cin.clear();
+                if (esNum(temp2) == false){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    } else if (stoi(temp2) > sistema.getSizeAreas() || temp2 == "0"){
+                        cout << "Opcion invalida! Debe elegir una de las opciones presentadas anteriormente!" << endl;
+                    } else {
+                        try {
+                            sistema.atender(temp1, temp2);
+                            cout << "El tiquete se atendio con exito!" << endl;
+                        } catch (runtime_error &e) {
+                            cout << "\nNo se ha podido realizar la operacion, la cola esta vacia" << endl;
+                        }
+                    continuar = false;
+                    }
             }
         }
 

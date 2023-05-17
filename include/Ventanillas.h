@@ -17,11 +17,12 @@ class Ventanillas {
 public:
     string codigoVentanilla;
     string codigoArea;
-    Tiquetes *ultimoTiquete;
+    string ultimoTiquete;
     int tiquetesAtendidos;
 
     Ventanillas(){
         tiquetesAtendidos = 0;
+        ultimoTiquete = "Ventanilla sin tiquete";
     }
 
     void setCodigoVentanilla(string codigoVentanilla){
@@ -46,7 +47,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Ventanillas &v) {
-    os << "Ventanilla (Codigo " << v.codigoVentanilla << ", En ventanilla " << v.ultimoTiquete << ")";
+    os << "Ventanilla (Codigo " << v.codigoVentanilla << ", " << v.ultimoTiquete << ")";
     return os;
 }
 

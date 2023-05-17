@@ -62,6 +62,7 @@ public:
 
     //Eliminar un area de la lista de areas
     void removeListaAreas(string codigo){
+        //Elimina el area de la lista de areas
         listaAreas.goToStart();
         while (!listaAreas.atEnd()){
             Areas *tempArea = listaAreas.getElement();
@@ -69,6 +70,15 @@ public:
                 listaAreas.remove();
             }
             listaAreas.next();
+        }
+        //Si hay algun servicio asociado a esa area tambien lo elimina
+        listaServicios.goToStart();
+        while (!listaServicios.atEnd()){
+            Servicios *tempServicio = listaServicios.getElement();
+            if(tempServicio->codigoArea == codigo){
+                listaServicios.remove();
+            }
+            listaServicios.next();
         }
     }
 
@@ -279,7 +289,7 @@ public:
                     //Si la ventanilla coincide en el codigo de area y numero
                     if(tempVentanilla->codigoVentanilla == codigo + numVentanilla){
                         //Le asigna el tiquete que ha sido sacado de la cola
-                        tempVentanilla->ultimoTiquete = tempTiquete;
+                        tempVentanilla->ultimoTiquete = "En ventanilla el tiquete codigo " + tempTiquete->codigoTiquete;
                         //Agrega el tiquete a las estadistica
                         tempVentanilla->agregarTiqueteAtendido();
                     }
@@ -444,6 +454,7 @@ public:
         return false;
     }
 
+    //Encuentra el area en la lista a partir de su codigo
     int encontrarElementoListaAreas(string codigo){
         listaAreas.goToStart();
         while (!listaAreas.atEnd()){
@@ -456,6 +467,7 @@ public:
         return false;
     }
 
+    //Encuentra el servicio en la lista a partir de su descripcion
     int encontrarElementoListaServicios(string descripcion){
         listaServicios.goToStart();
         while (!listaServicios.atEnd()){

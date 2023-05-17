@@ -31,7 +31,6 @@ public:
         tiempoEsperaPromedio = 0;
     }
 
-
     void setDescripcion(string descripcion){
         this->descripcion = descripcion;
     }
