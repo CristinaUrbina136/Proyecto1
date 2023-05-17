@@ -20,6 +20,7 @@ public:
     int prioridadFinal;
     //Para impresion
     char *fechaSolicitado;
+    string fecha;
     //Para hacer el calculo de tiempo transcurrido hasta la atencion
     int tiempoSolicitado;
     int tiempoAtendido;
@@ -37,10 +38,11 @@ public:
         time_t now = time(0);
         tiempoSolicitado = now;
         fechaSolicitado = ctime(&now);
+        fecha = fechaSolicitado;
     }
 
     void verTiquete(){
-        cout << "Tiquete (Codigo " << codigoTiquete << ", Fecha solicitado " << fechaSolicitado << ", Prioridad " << to_string(prioridadFinal) << ")" << endl;
+        cout << "Tiquete (Codigo " << codigoTiquete << ", Fecha solicitado " << fecha << ", Prioridad " << to_string(prioridadFinal) << ")" << endl;
     }
 
 
@@ -49,7 +51,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Tiquetes &t) {
-    os << "Tiquete (Codigo " << t.codigoTiquete << ", Fecha solicitado " << t.fechaSolicitado << ", Prioridad " << t.prioridadFinal << ")";
+    os << "Tiquete (Codigo " << t.codigoTiquete << ", Fecha solicitado " << t.fecha << ", Prioridad " << t.prioridadFinal << ")";
     return os;
 }
 
