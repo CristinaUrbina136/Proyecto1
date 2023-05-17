@@ -98,7 +98,7 @@ public:
 
 
 ostream& operator <<(ostream &os, const Areas &a) {
-    os << "AREA (" << a.descripcion << ", " << a.codigo << ")";
+    os << "Area (" << a.descripcion << ", " << a.codigo << ")";
     return os;
 }
 

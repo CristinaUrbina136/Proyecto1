@@ -40,7 +40,7 @@ public:
     }
 
     void verTiquete(){
-        cout << "TIQUETE (" << codigoTiquete << "," << fechaSolicitado << ", " << to_string(prioridadFinal) << ")" << endl;
+        cout << "Tiquete (Codigo" << codigoTiquete << ", Fecha solicitado " << fechaSolicitado << ", Prioridad " << to_string(prioridadFinal) << ")" << endl;
     }
 
 

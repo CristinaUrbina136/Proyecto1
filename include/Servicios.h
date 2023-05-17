@@ -49,7 +49,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Servicios &s) {
-    os << "Servicios (" << s.descripcion << ", " << s.prioridad << ", " << s.codigoArea << ", " << s.tiquetesSolicitados << ")";
+    os << "Servicio (" << s.descripcion << ", " << s.prioridad << ", " << s.codigoArea << ", " << s.tiquetesSolicitados << ")";
     return os;
 }
 

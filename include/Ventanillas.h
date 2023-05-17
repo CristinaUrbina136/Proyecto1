@@ -46,7 +46,7 @@ public:
 };
 
 ostream& operator <<(ostream &os, const Ventanillas &v) {
-    os << "Ventanilla (" << v.codigoVentanilla << ", " << v.ultimoTiquete << ")";
+    os << "Ventanilla (Codigo " << v.codigoVentanilla << ", En ventanilla " << v.ultimoTiquete << ")";
     return os;
 }
 
